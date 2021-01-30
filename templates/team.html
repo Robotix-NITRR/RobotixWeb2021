@@ -1,0 +1,9 @@
+{% if message %}
+  {{message}}
+{% endif %}
+<p>Share team code to add other members</p>
+<h4>Team Code: </h4> <label >{{team.token}}</label>
+<h1>Team Members</h1>
+{% for user in Team.member.all %}
+  <li>{{user.name}}</li>
+{% endfor %}

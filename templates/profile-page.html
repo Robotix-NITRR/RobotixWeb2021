@@ -1,0 +1,314 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Robotix Club • My Account
+{% endblock %}
+
+{% block content %}
+  <!-- End Navbar -->
+  <script type="text/javascript">
+      {% if messages %}
+      window.onload = fn1();
+      function fn1()
+      {
+        // alert("Hiiiii");
+        alert(" {% for message in messages %}  {{ message }} {% endfor %} ");
+      }
+       {% endif %}
+  </script>
+  <div class="profile-page">
+  <div class="wrapper">
+    <div class="page-header">
+      <img src='{% static "assets/img/dots.png" %}' class="dots">
+      <img src='{% static "assets/img/path4.png" %}' class="path">
+      <div class="container align-items-center">
+        <div class="row">
+          <div class="col-lg-7 col-md-7 ml-auto mr-auto">
+            <div class="card card-coin card-plain">
+              <div class="card-header">
+                <img src='{% static "img/RobotixLogo.png" %}' class="img-center img-fluid">
+              </div>
+              <div class="card-body">
+                <ul class="nav nav-tabs nav-tabs-danger justify-content-center">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#linka">
+                      Robothon
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#linkb">
+                      RoboExpo
+                    </a>
+                  </li>
+                  <!--<li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#linkc">
+
+                    </a>
+                  </li>-->
+                </ul>
+                <div class="tab-content tab-subcategories">
+                  <div class="tab-pane active" id="linka">
+                    <div class="table-responsive">
+                      <h5 class="text-center"><strong>29 February  -  1 March</strong></h5>
+                      <table class="text-white" align="center">
+                          <tr>
+                            <th>
+                              Schedule Header
+                            </th>
+                            <th>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </th>
+                            <th>
+                              Time
+                            </th>
+                            </tr>
+
+                            <tr>
+                            <td>
+                              To Be Updated
+                            </td>
+                            <td>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <td>
+                              To Be Updated
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              To Be Updated
+                            </td>
+                            <td>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <td>
+                              To Be Updated
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              To Be Updated
+                            </td>
+                            <td>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                            <td>
+                              To Be Updated
+                            </td>
+                          </tr>
+                      <!--Yeh extra hhh-->
+                        </table>
+                    </div>
+                    <br>
+                    <div align="center">
+                      {% if request.user.portal.is_complete == False %}
+                    <a type="button" href="{% url 'robothon:home' %}" class="btn btn-danger btn-round btn-lg">Complete Profile</a> <!-- Robothon Button Work -->
+                    {% elif request.user.portal.joined_team == False %}
+                    <a type="button" href="{% url 'robothon:home' %}" class="btn btn-danger btn-round btn-lg">Form Team</a>
+                    {% else %}
+                    <a type="button" href="#" class="btn btn-danger btn-round btn-lg" disabled>Registered</a>
+                    {% endif %}
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="linkb">
+                    <h5 class="text-center"><strong>1 March</strong></h5>
+                    <table  class="text-white" align="center">
+                        <tr>
+                          <th>
+                            Schedule Header
+                          </th>
+                          <th>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          </th>
+                          <th>
+                            Time
+                          </th>
+                         </tr>
+                         <tr>
+                         </tr>
+                          <tr>
+                          <td>
+                            To Be Updated
+                          </td>
+                          <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          </td>
+                          <td>
+                            To Be Updated
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            To Be Updated
+                          </td>
+                          <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          </td>
+                          <td>
+                            To Be Updated
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            To Be Updated
+                          </td>
+                          <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          </td>
+                          <td>
+                            To Be Updated
+                          </td>
+                        </tr>
+                    <!--Yeh extra hhh-->
+                      </table>
+                      <br>
+                    <div align="center">
+                    <!-- {% if roboexpo.team_name %} -->
+                    <!-- <a type="button" href="#" class="btn btn-danger btn-round btn-lg" disabled>Registered</a> -->
+                    <!-- {% else %} -->
+                    <a type="button" href="{% url 'roboexpo:roboexpo-registration' %}" class="btn btn-danger btn-round btn-lg">Register - ROBOEXPO</a>
+                    <!-- {% endif %} -->
+                    </div>
+                  </div>
+                 <!--
+                  <div class="tab-pane" id="linkc">
+
+                  </div>-->
+                </div>
+              </div>
+            </div>
+            </div>
+
+         <div class="col-lg-1 col-md-1"></div>
+          {% if profile %}
+            <div class="col-lg-4 col-md-4">
+              <h1 class="profile-title text-left" id="profilename" style="top:40px;">{{ profile.name }}</h1>
+              <br>
+              <div class="profile-description">
+                {% if portal %}
+              <h4 id="college"><i class="fas fa-building"></i>&nbsp;&nbsp;&nbsp;{{ portal.college }}</h4>
+              <h4 id="branch"><i class="fas fa-cog"></i>&nbsp;&nbsp;&nbsp;{{ portal.branch }}</h4>
+                {% endif %}
+              <h4 id="phone"><i class="fas fa-phone"></i>&nbsp;&nbsp;&nbsp;{{ profile.phone_no }}</h4>
+              <h4 id="email"><i class="fas fa-envelope"></i>&nbsp;&nbsp;&nbsp;{{ profile.email }}</h4>
+              </div>
+              <br>
+           {% endif %}
+              <div class="btn-wrapper profile pt-3">
+                <h4>Follow ROBOTiX Club</h4>
+                <a target="_blank" href="https://www.instagram.com/robotix_nitrr" class="btn btn-icon btn-round btn-simple btn-neutral" data-toggle="tooltip" data-original-title="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a target="_blank" href="https://www.facebook.com/nitrrobots16/" class="btn btn-icon btn-round btn-simple btn-neutral" data-toggle="tooltip" data-original-title="Facebook">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a target="_blank" href="https://in.linkedin.com/company/robotix-club-nit-raipur" class="btn btn-icon btn-round btn-simple btn-neutral" data-toggle="tooltip" data-original-title="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a target="_blank" href="mailto:robotixclub@nitrr.ac.in" class="btn btn-icon btn-round btn-simple btn-neutral" data-toggle="tooltip" data-original-title="Email ID">
+                    <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+    <br><br><br><br><br><br><br>
+    </div>
+{% if Team %}
+    <div class="container">
+     <h1 class="text-danger" align="center"><strong>Robothon Team Details</strong></h1>
+     <h3 class="text-white" align="center"><strong>Team Name : </strong>{{Team.name}} </h3>
+     <h4 class="text-white" align="center"><strong>Team Code : </strong>{{Team.token}} </h4>
+      <div class="row">
+          <table class="text-white" align="center">
+            <tr>
+              <th>
+                Member Name
+              </th>
+              <th>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </th>
+              <th>
+                College
+              </th>
+              <th>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </th>
+              <th>
+                Branch
+              </th>
+              <th>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </th>
+              <th>
+                Registered Mail ID
+              </th>
+            </tr>
+
+            <!--Loop yahan se lga-->
+            {% for user in Team.member.all %}
+            <tr>
+              <td>
+                {{user.name}}
+              </td>
+              <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+              <td>
+                 {{user.portal.college}}
+              </td>
+              <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+              <td>
+                 {{user.portal.branch}}
+              </td>
+              <td>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </td>
+              <td>
+                 {{user.email}}
+              </td>
+            </tr>
+             <!--Yahan Tak-->
+            {% endfor %}
+          </table>
+
+      </div>
+      <br><br><br><br>
+    </div>
+    <style>
+    .upload-btn-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .upload-btn-wrapper input[type=file] {
+      font-size: 100px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      width: 100%;
+    }
+    </style>
+    <div class="container" align="center">
+      {%  if Team.abstract == '' %}
+      <form class="" action="" method="POST" enctype="multipart/form-data">
+        <div class="upload-btn-wrapper">
+        {% csrf_token %}
+        <button class="btn btn-danger btn-round" title="Upload Abstract File" >Upload Abstract</button>
+        <input type="file" name="myfile" />
+        </div>
+        <button class="btn btn-danger btn-round" type="submit" name='abstract'>Submit your Abstract</button>
+        {% endif %}
+      </form>
+      <br><br><br>
+    </div>
+{% endif %}
+  </div>
+</div>
+{% endblock %}

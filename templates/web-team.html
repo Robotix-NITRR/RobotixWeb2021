@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Robotix Club • Web and Apps Team
+{% endblock %}
+
+{% block content %}
+<img src='{% static "assets/img/dots.png" %}' class="dots">
+<img src='{% static "assets/img/path4.png" %}' class="path">
+
+  <style>
+  .column#grayscale img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+  }
+  .column#grayscale:hover img {
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+  }
+  </style>
+  <!-- Navbar -->
+
+  <section class="section section-lg">
+      <section class="container"><br><br>
+            <div class="page-head-title">
+                <h5 class="page-title-sim">Web & Apps Team</h5>
+              </div><br>
+
+          <!-- Pehla Loop Web -->
+
+          <div class="row" align="center">
+            <h1 class="text-info"><strong>Web Development</strong></h1>
+
+              {% for web in web %}
+            <div class="col-xs-3 col-sm-3">
+            <div class="team-member" align="center">
+                      <a href="" target="_blank"><img class="img-rounded" src='{{ web.img.url }}' style="border-radius:75px" width="150" height="150" title=""></a>
+                      <h4><b>{{ web.name }}</b></h4>
+                      <span class="deg">{{ web.branch }}</span><br>
+                      <span class="deg">
+                      <a href="{{ web.linkedin }}" target="blank"><img src='{% static "assets/img/linkedin.png" %}' width="20" height="18" title=""></a>
+                      <a href="mailto:{{web.email}}" target="{{ web.email }}"><img src='{% static "assets/img/mail.png" %}' width="25" height="25" title=""></a>
+                      <a href="tel:+91{{web.phone}}" target="{{ web.phone }}"><img src='{% static "assets/img/phone.png" %}' width="20" height="20" title=""></a>
+                      </span>
+            </div>
+            </div>
+             {% endfor %}
+
+          </div>
+
+
+          <div class="row" align="center">
+            <h1 class="text-info"><strong>App Development</strong></h1>
+
+              {% for app in app %}
+            <div class="col-xs-3 col-sm-3">
+            <div class="team-member" align="center">
+                      <a href="" target="_blank"><img class="img-rounded" src='{{ app.img.url }}' style="border-radius:75px" width="150" height="150" title=""></a>
+                      <h4><b>{{ app.name }}</b></h4>
+                      <span class="deg">{{ app.branch }}</span><br>
+                      <span class="deg">
+                      <a href="{{ app.linkedin }}" target="_blank"><img src='{% static "assets/img/linkedin.png" %}' width="20" height="18" title=""></a>
+                      <a href="mailto:{{app.email}}" target="{{ app.email }}"><img src='{% static "assets/img/mail.png" %}' height="25" title=""></a>
+                      <a href="tel:+91{{app.phone}}" target="{{ app.phone }}"><img src='{% static "assets/img/phone.png" %}' width="20" height="20" title=""></a>
+                      </span>
+            </div>
+            </div>
+            {% endfor %}
+
+          </div>
+          <!-- Dusra Loop Khatam -->
+          <br>
+
+      </section>
+    </section>
+
+
+{% endblock %}

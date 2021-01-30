@@ -1,0 +1,8 @@
+<form action="{% url 'portal:createProfile' %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    <label for="file">ADD RESUME:</label><input type="file" id="file" name="resume">
+    <br>
+    <br>
+    <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
+    <button name="create">Submit Detail</button>
+</form>

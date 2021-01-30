@@ -1,0 +1,297 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+ROBOTiX Club • Recruitment 2021
+{% endblock %}
+
+{% block content %}
+
+  <img src='{% static "assets/img/dots.png" %}' class="dots">
+  <img src='{% static "assets/img/path4.png" %}' class="path">
+
+  <section class="section section-lg">
+      <section class="container"><br><br>
+
+            <div class="page-head-title">
+                <h5 class="page-title-sim">Team Recruitment 2021</h5>
+              </div><br>
+                <form class="form" name="reg" id="regForm" method="POST" onsubmit="">
+                  {% csrf_token %}
+                <div class="row">
+                <div class="col-lg-12 col-md-12">
+                  <h2 class="text-info text-center"><b>Section 1</b> - Basic Details</h2>
+                     <div class="card card-coin card-success">
+                        <div class="card-body">          <!--class="text-white h5 text-center-->
+                          <div class="input-field">
+                            <h3>Enter Your Name.</h3>
+                          <input type="text" name="name" placeholder="Name" class="form-control" id="name" data-validation-required-message="Please enter your Name" required>
+                            <br><br><br>
+                            </div>
+
+                         <!------------------------ E Mail ---------------------------->
+                        <div class="input-field">
+                              <h3>Enter Your E-Mail ID</h3>
+                          <input type="email" name="email" placeholder="E-Mail" class="form-control" id="email" data-validation-required-message="Please enter your EMail" pattern="[^ @]*@[^ @]*" required>
+                          <br><br><br>
+                        </div>
+
+                        <!------------------------ Contact ------------------------------------->
+                        <div class="input-field">
+                              <h3>Enter Your Contact Number.</h3>
+                          <input type="number" name="phone" placeholder="Contact Number ( Mobile )" class="form-control" id="pnumber" data-validation-required-message="Please enter your Phone Number" maxlength="10" required>
+                          <br>
+                          <input type="checkbox" name="simino" id="simino" onclick="siminumber()">
+                          <em class="text-white">Check this if your Contact No. and Whatsapp No. are same.</em>
+                          <br><br><br>
+                        </div>
+
+                        <!-------------------------------- Whatsapp ------------------------->
+                        <div class="input-field">
+                              <h3>Enter Your Whatsapp Number.</h3>
+                          <input type="number" name="whatsapp" placeholder="Whatsapp Number" class="form-control" id="wnumber" data-validation-required-message="Please enter your Whatsapp Number" maxlength="10" required>
+                          <br><br><br>
+                        </div>
+
+                        <!----------------------------Script for similar fields phone number and whatsapp number ----------------------------------->
+
+                        <script>
+                                     function siminumber()
+                                      {
+                                          if (document.getElementById('simino').checked)
+                                             {
+                                               document.getElementById('wnumber').value = document.getElementById('pnumber').value;
+                                             }
+                                          else
+                                             {
+                                               document.getElementById('wnumber').value="";
+                                             }
+                                      }
+                                 </script>
+
+
+                        <!--------------------------------------------------- Script ends ------------------------->
+
+                        <!--------------------------------------- Branch -------------------------------------->
+
+                        <div class="input-field">
+                        <h3>Select Your Branch.</h3>
+                        <input list="branch" type="text" name="branch" placeholder="Branch" data-validation-required-message="Please select your Branch" class="form-control" required autocomplete="off">
+                        <datalist id="branch">
+                          <option value="Architecture">Architecture</option>
+                          <option value="Bio Medical">Bio Medical</option>
+                          <option value="Bio Technology">Bio Technology</option>
+                          <option value="Chemical">Chemical</option>
+                          <option value="Civil">Civil</option>
+                          <option value="Computer Science">Computer Science</option>
+                          <option value="Electrical">Electrical</option>
+                          <option value="Electronics and Communication">Electronics and Communication</option>
+                          <option value="Information Technology">Information Technology</option>
+                          <option value="MCA">MCA</option>
+                          <option value="Mechanical">Mechanical</option>
+                          <option value="Mining">Mining</option>
+                          <option value="Metallurgical and Materials">Metallurgy and Materials</option>
+                        </datalist>
+                        </input>
+                        <br><br><br>
+                        </div>
+
+                         <!----------------------------- Semester ------------------------------>
+                        <div class="input-field">
+                              <h3>Select Your Semester</h3>
+                          <input list="sem" type="text" name="sem" placeholder="Semester" class="form-control" id="semes" data-validation-required-message="Please select your Semester" required autocomplete="off">
+                            <datalist id="sem">
+                             <option value="1st Semester">1<sup>st</sup> Semester</option>
+                             <option value="2nd Semester">2<sup>nd</sup> Semester</option>
+                             <option value="3rd Semester">3<sup>rd</sup> Semester</option>
+                             <option value="4th Semester">4<sup>th</sup> Semester</option>
+                             <option value="5th Semester">5<sup>th</sup> Semester</option>
+                             <option value="6th Semester">6<sup>th</sup> Semester</option>
+                             <option value="7th Semester">7<sup>th</sup> Semester</option>
+                             <option value="8th Semester">8<sup>th</sup> Semester</option>
+                          </datalist>
+                          </input>
+                          <br><br><br>
+                        </div>
+
+                    <div class="input-field">
+                      <h3>Domain :</h3>
+                      <em style="color:#ffffff;">You can select more than one domain as per your wish.</em>
+                      <br><br>
+                      <div class="row">
+                      <div class="col-md-2">
+                      <input type="checkbox" name="domain" value="PR & Marketing">&nbsp;<span style="font-size:20px;color:#ffffff;">PR & Marketing</span>&emsp;
+                      </div>
+                      <div class="col-md-2">
+                      <input type="checkbox" name="domain" value="Sponsorship">&nbsp;<span style="font-size:20px;color:#ffffff;">Sponsorship</span>&emsp;
+                      </div>
+                      <div class="col-md-2">
+                      <input type="checkbox" name="domain" value="Technical">&nbsp;<span style="font-size:20px;color:#ffffff;">Technical</span>&emsp;
+                      </div>
+                      <div class="col-md-2">
+                      <input type="checkbox" name="domain" value="Web & App">&nbsp;<span style="font-size:20px;color:#ffffff;">Web & App</span>&emsp;
+                      </div>
+                      <div class="col-md-2">
+                      <input type="checkbox" name="domain" value="Design and Video">&nbsp;<span style="font-size:20px;color:#ffffff;">Design and Video Editing</span>&emsp;
+                      </div>
+                      <div class="col-md-2">
+                      <input type="checkbox" name="domain" value="Documentation">&nbsp;<span style="font-size:20px;color:#ffffff;">Documentation</span>&emsp;
+                      </div>
+                      </div>
+                      <br><br><br>
+                    </div>
+
+
+                        </div>
+
+                      </div>
+
+                        </div>
+
+                        <div class="col-lg-12 col-md-12">
+                          <h2 class="text-info text-center"><b>Section 2</b> - Personal Details</h2>
+                             <div class="card card-coin card-success">
+                                <div class="card-body">
+
+                              <div class="input-field">
+                                <h3>Introduce yourself</h3>
+                                <textarea rows="5" type="text" name="intro" placeholder="Introduce yourself..." class="form-control" id="intro" minlength="50" required></textarea>
+                                <br><br><br>
+                              </div>
+
+                              <div class="input-field">
+                                <h3>List out the names of other clubs and Committees that you are part of.</h3>
+                                <textarea type="text" name="other_club_committee" placeholder="Other Clubs and Committees..." class="form-control" id="strength" required></textarea>
+                                <br><br><br>
+                              </div>
+
+                              <div class="input-field">
+                                <h3>What are your Strengths and Weakness ?</h3>
+                                <textarea type="text" name="strength_weakness" placeholder="Strengths and Weakness..." class="form-control" id="strength"required></textarea>
+                                <br><br><br>
+                              </div>
+
+                              <div class="input-field">
+                                <h3>List out your previous work experiences if any.</h3>
+                                <textarea type="text" name="work" placeholder="Previous Work Experiences..." class="form-control" id="work" required></textarea>
+                                <br><br><br>
+                              </div>
+
+                              <div class="input-field">
+                                <h3>What is your main motive to join ROBOTiX Club ?</h3>
+                                <textarea type="text" name="why_robotix" placeholder="Reasons to join..." class="form-control" id="reason" minlength="10" required></textarea>
+                                <br><br><br>
+                              </div>
+
+                              <div class="input-field">
+                                <h3>If you become the part of club, What improvements do you wish to bring to the club ?</h3>
+                                <textarea type="text" name="improvements_suggesions" placeholder="Your Suggestions..." class="form-control" id="improvements" minlength="10" required></textarea>
+                                <br><br><br>
+                              </div>
+
+                              <div class="input-field">
+                                <h3>Where do you live (Hostel/Raipur/Bhilai)</h3>
+                                <input type="text" name="residence" placeholder="Localite or Non-Localite..." class="form-control" id="residence" required></input>
+                                <br><br><br>
+                              </div>
+
+                                </div>
+                             </div>
+                        </div>
+
+
+                        <div class="col-lg-12 col-md-12">
+                              <h2 class="text-info text-center"><b>Section 3</b> - Personality/Reasoning</h2>
+                                 <div class="card card-coin card-success">
+                                    <div class="card-body">
+
+                                      <div class="input-field">
+                                        <h3>You will prioritize ROBOTiX Club over other Activities.</h3>
+                                        <div class="row">
+                                        <div class="col-md-3">
+                                        <input type="radio" name="likert1" id="strongdis" value="-2" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Strongly Disagree</span>&emsp;
+                                        </div>
+                                        <div class="col-md-2">
+                                        <input type="radio" name="likert1" id="dis" value="-1" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Disagree</span>&emsp;
+                                        </div>
+                                        <div class="col-md-2">
+                                        <input type="radio" name="likert1" id="undec" value="0" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Undecided</span>&emsp;
+                                        </div>
+                                        <div class="col-md-2">
+                                        <input type="radio" name="likert1" id="agree" value="+1" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Agree</span>&emsp;
+                                        </div>
+                                        <div class="col-md-3">
+                                        <input type="radio" name="likert1" id="strongagree" value="+2" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Strongly Agree</span>&emsp;
+                                        </div>
+                                        </div>
+                                        <br>
+                                        <p style="color:#ffffff;">Your reason for the above choice.</p>
+                                        <input type="text" name="likert1reason" placeholder="Your Reason..." class="form-control" id="likert1reason" required></input>
+                                        <br><br><br>
+                                      </div>
+
+                                      <div class="input-field">
+                                        <h3>You will ensure the completion of the task assigned to you.</h3>
+                                        <div class="row">
+                                        <div class="col-md-3">
+                                        <input type="radio" name="likert2" id="strongdis" value="-2" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Strongly Disagree</span>&emsp;
+                                        </div>
+                                        <div class="col-md-2">
+                                        <input type="radio" name="likert2" id="dis" value="-1" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Disagree</span>&emsp;
+                                        </div>
+                                        <div class="col-md-2">
+                                        <input type="radio" name="likert2" id="undec" value="0" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Undecided</span>&emsp;
+                                        </div>
+                                        <div class="col-md-2">
+                                        <input type="radio" name="likert2" id="agree" value="+1" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Agree</span>&emsp;
+                                        </div>
+                                        <div class="col-md-3">
+                                        <input type="radio" name="likert2" id="strongagree" value="+2" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Strongly Agree</span>&emsp;
+                                        </div>
+                                        </div>
+                                        <br>
+                                        <p style="color:#ffffff;">Your reason for the above choice.</p>
+                                        <input type="text" name="likert2reason" placeholder="Your Reason..." class="form-control" id="likert2reason" required></input>
+                                        <br><br><br>
+                                      </div>
+
+                                      <div class="input-field">
+                                        <h3>You intend to be a part of team and lead the Club.</h3>
+                                        <div class="row">
+                                        <div class="col-md-3">
+                                        <input type="radio" name="likert3" id="strongdis" value="-2" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Strongly Disagree</span>&emsp;
+                                        </div>
+                                        <div class="col-md-2">
+                                        <input type="radio" name="likert3" id="dis" value="-1" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Disagree</span>&emsp;
+                                        </div>
+                                        <div class="col-md-2">
+                                        <input type="radio" name="likert3" id="undec" value="0" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Undecided</span>&emsp;
+                                        </div>
+                                        <div class="col-md-2">
+                                        <input type="radio" name="likert3" id="agree" value="+1" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Agree</span>&emsp;
+                                        </div>
+                                        <div class="col-md-3">
+                                        <input type="radio" name="likert3" id="strongagree" value="+2" required>&nbsp;<span style="font-size:20px;color:#ffffff;">Strongly Agree</span>&emsp;
+                                        </div>
+                                        </div>
+                                        <br>
+                                        <p style="color:#ffffff;">Your reason for the above choice.</p>
+                                        <input type="text" name="likert3reason" placeholder="Your Reason..." class="form-control" id="likert2reason" required></input>
+                                        <br><br><br>
+                                      </div>
+
+
+
+                                    </div>
+                                 </div>
+                        </div>
+
+
+                     </div>
+                <div align="center" >
+                   <button type="submit" onclick="" class="btn btn-info btn-round btn-lg" style="font-size:20px"><b>  Submit  </b></button><br/>
+                </div>
+              </form>
+      </section>
+  </section>
+{% endblock %}

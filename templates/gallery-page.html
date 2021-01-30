@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Robotix Club • Gallery
+{% endblock %}
+
+{% block content %}
+  <style>
+  .column#grayscale img {
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+      -webkit-transition: .3s ease-in-out;
+      transition: .3s ease-in-out;
+  }
+  .column#grayscale:hover img {
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+  }
+  </style>
+  <img src='{% static "assets/img/dots.png" %}' class="dots">
+  <img src='{% static "assets/img/path4.png" %}' class="path">
+
+  <section class="section section-lg">
+      <section class="container"><br><br>
+            <div class="page-head-title">
+                <h5 class="page-title-sim">Gallery</h5>
+              </div><br>
+
+                  <div class = "row">
+                    {% for gall in gallery %}
+                        <a href="#" class="column col-lg-4 col-md-4" id="grayscale">
+                        <img src ='{{gall.photo.url}}'> <!-- Image here -->
+                        <p class="text-white h3" align="center">{{gall.title}}</p>  <!-- Title of image here -->
+                        </a>
+                    {% endfor %}
+        </div>
+      </section>
+    </section>
+
+{% endblock %}

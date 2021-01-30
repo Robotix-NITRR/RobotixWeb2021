@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Robotix Club • RoboExpo Registration
+{% endblock %}
+
+{% block content %}
+    <img src='{% static "assets/img/dots.png" %}' class="dots">
+    <img src='{% static "assets/img/path4.png" %}' class="path">
+  <!-- End Navbar -->
+  <div class="wrapper">
+    <div class="page-header">
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-12">
+              <div id="square7" class="square square-7"></div>
+              <div id="square8" class="square square-8"></div>
+              <div class="card card-register" >
+                <form name="myform" method="POST" enctype="multipart/form-data">
+                  {% csrf_token %}
+                <div class="card-header">
+                  <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
+                  <h4 class="card-title" style="color:#dadada">&nbsp;Roboexpo register</h4>
+                  <h4 class="text-danger" >{{error}}</h4>
+                </div>
+                <div class="card-body">
+
+                    <!-- <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="mrao-icons icon-single-02"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Full Name" required>
+                    </div> -->
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-users"></i>
+                        </div>
+                      </div>
+                    <input type="text" class="form-control" name='team_name' placeholder="Team Name" required>
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-file"></i>
+                        </div>
+                      </div>
+                      <input type="email" class="form-control" name='email' placeholder="Email of Team Leader" required>
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-university"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" name='team_mates' placeholder="Enter email of Team-members separated by comma (,)" required>
+                    </div>
+
+                    <!-- <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-flask"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Branch" required>
+                    </div> -->
+
+                    <!-- <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fa fa-video"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Youtube Video Link" required>
+                    </div> -->
+                    <!-- <div class="form-check text-left text-info">
+                      <label class="form-check-label">
+                      <i class="fas fa-exclamation"></i>&nbsp;&nbsp; The Video contain the explanation of the video.
+                      </label>
+                      <br>
+                    </div> -->
+
+                    <!-- Upload Button Style-->
+                    <style>
+                    .upload-btn-wrapper {
+                      position: relative;
+                      overflow: hidden;
+                      display: inline-block;
+                      width: 100%;
+                    }
+
+                    .upload-btn-wrapper input[type=file] {
+                      font-size: 100px;
+                      position: absolute;
+                      left: 0;
+                      top: 0;
+                      opacity: 0;
+                      width: 100%;
+                    }
+                    </style>
+
+
+                    <div class="container" align="center">
+                      <br>
+                    <div class="upload-btn-wrapper">
+                      <button class="btn btn-info" title="Upload Abstract File" style="width: 100%;">Upload a file</button>
+                      <input type="file" name="myfile" />
+                    </div>
+
+                    <div class="form-check text-left text-info">
+                      <label class="form-check-label">
+                        <i class="fas fa-exclamation"></i>&nbsp;&nbsp; The Abstract File should contain
+                        <ol>
+                          <li>Name of the Project</li>
+                          <li>Working of the Project</li>
+                          <li>Innovation aspects of Project</li>
+                          <li>Social aspects of Project</li>
+                          <li>Photos of the Prpject</li>
+                        </ol>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="card-footer text-center">
+                  <button type="submit" name='expo-register' onclick="" href="" class="btn btn-info btn-round btn-lg">Participate!</button>
+
+                </div>
+
+               </form>
+
+             </div>
+
+           </div>
+
+
+        </div>
+        </div>
+          <div id="square1" class="square square-1"></div>
+          <div id="square2" class="square square-2"></div>
+          <div id="square3" class="square square-3"></div>
+          <div id="square4" class="square square-4"></div>
+          <div id="square5" class="square square-5"></div>
+          <div id="square6" class="square square-6"></div>
+        </div>
+      </div>
+
+  </div>
+<br><br>  <br><br><br>
+{% endblock %}

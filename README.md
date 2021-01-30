@@ -11,6 +11,7 @@ virtualenv .
 <h3> Setting up the project</h1>
 
 ```bash
-pip install -r requirements.txt
+pip install -r new_requirements.txt
 python manage.py runserver
 ```
+## For now use new_requirements.txt file

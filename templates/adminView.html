@@ -1,0 +1,49 @@
+
+{% for team  in all_team %}
+    <ul>
+        <li><h1>{{ team.name }}</h1></li>
+        <h5>Team Lead: {{team.admin.name}}</h5>
+        <h3>Team Member</h3>
+        <h2>Abstract: {% if team.abstract %} <a href="{{team.abstract.url}}">ABSTRACT FILE</a> {% else %} NO ABSTRACT SUBMITTED {% endif %}</h2>
+        <li>Confirmed: {% if team.confirmed %}Confirmed {% else %} Not Confirmed</li>{% endif %}
+        <ol>
+
+            {% for user in team.member.all %}
+                <li><a href="{% url 'robothon:profileView' user_id=user.id %}"> {{user.name}} </a> </li>
+            {% endfor %}
+
+        </ol>
+
+        {% if team.selected %}
+            <p>SELECTED</p>
+            {% else %}
+        <div id="team_select{{team.id}}" value="{{team.id}}"><button id="select" value="{{team.id}}"onclick="select(this);">SELECT TEAM</button></div>
+        {% endif %}
+    </ul>
+{% endfor %}
+<script>
+    function select(obj) {
+    //alert("hii");
+    team_id = obj.value;
+    temp_div = "team_select"+ team_id;//only name of div not html object
+    response_div = document.getElementById(temp_div);
+    url = "/robothon/select/" + team_id;
+    //alert(url);
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        if ( xhttp.responseText == "ok" )
+            {
+                response_div.innerHTML = "<p>SELECTED</p>";
+            }
+
+    }
+    else
+    {
+        response_div.innerHTML = "<p>Processing</p>";
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+</script>

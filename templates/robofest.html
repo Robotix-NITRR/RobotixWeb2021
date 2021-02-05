@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+Robotix Club • ROBOFEST
+{% endblock %}
+
+{% block content %}
+<img src='{% static "assets/img/dots.png" %}' class="dots">
+<img src='{% static "assets/img/path4.png" %}' class="path">
+  <section class="section section-lg">
+      <section class="container"><br><br>
+         <div class="row"><br>
+            <div class="page-head-title">
+                <h2 class="page-title-sim">Events</h2>
+          </div><br>
+          <div class="content-center">
+              <div class="row row-grid justify-content-between align-items-center text-left">
+                <div class="col-lg-12 col-md-12">
+                  <h1 class="text-white" align="center" style="font-size: 50px;"><strong>ROBOFEST'2020</strong></h1>
+                  <h4 class="text-success" align="center">29 February - 1 March</h4>
+                  <p class="text-white mb-3">Robofest provides an opportunity for the students of the institute to practically apply their knowledge in
+                    Robotics by use of their problem solving ability. By giving the students an opportunity to interact with the field specialists we hope to boost each students’ entrepreneurial spirit.
+                    The Fest incorporates all this under one roof and provides the participants with a firsthand experience with Robotics.
+                    <br>
+                    Robofest will be organized in collaboration with team TED-X NIT Raipur, to encourage the spirit of collaboration between students.
+                    Collaboration is extremely helpful as it saves ample of time and resources of organizing event as everything is a joint effort.
+                    <br>
+                    Mentorship and Guidance will also be provided to the participants by industry experts to accelerate their potential.
+                    This will give each student a great opportunity to learn about the various future scopes in Robotics and prepare them for it.
+                  </p>
+                  <br><br>
+                </div>
+              </div>
+            </div>
+      </section>
+    </section>
+{% endblock %}

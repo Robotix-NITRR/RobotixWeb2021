@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+ROBOTiX Club • SignUp
+{% endblock %}
+
+{% block content %}
+<div class="register-page">
+<div class="wrapper">
+    <div class="page-header">
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-6">
+              <div id="square7" class="square square-7"></div>
+              <div id="square8" class="square square-8"></div>
+              <div class="card card-register" >
+                <form name="myform" action="" method="POST">
+                <div class="card-header">
+                  <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
+                  <h4 class="card-title" style="color:#dadada">&nbsp;SignUp</h4>
+                </div>
+                <div class="card-body">
+                  <form class="form" method='POST'>
+                    {% csrf_token %}
+                    <h4 class="text-danger" >{{msg}}</h4>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="mrao-icons icon-email-85"></i>
+                        </div>
+                      </div>
+                      <input type="email" placeholder="Email" class="form-control" name='email' pattern="[^ @]*@[^ @]*" required>
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="mrao-icons icon-single-02"></i>
+                        </div>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Full Name" name='name' required>
+                    </div>
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="mrao-icons icon-mobile"></i>
+                        </div>
+                      </div>
+                      <input type="text" placeholder="Phone Number" class="form-control" name='phone_no' pattern="[0-9]{10}" required>
+                    </div>
+                    <div class="form text-center">
+                      <label class="form-label">
+                        <span class="form-check-sign"></span>
+                        Password should contain atleast 8 characters and atleast a number.
+                      </label>
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="mrao-icons icon-lock-circle"></i>
+                        </div>
+                      </div>
+                      <input type="password" id="txtPassword" class="form-control" name='password' placeholder="Password" required>
+                    </div>
+
+
+                  <!-- <div class="container" style="width:100%;pading:5px;">
+                  <div class="progress-container">
+                    <p class="progress-value" id="pass_strength" style="">  &nbsp;<span class="text-default" style="font-size:5;">&nbsp; The password should be strong to be valid</span></p>
+                    <div class="progress">
+                      <div class="progress-bar" id="password_strength" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="">
+                    </div>
+                  </div>
+                  </div>
+                  </div> -->
+
+                  <!-- <script>
+
+      function CheckStrength(password) {
+          var password_strength = document.getElementById("password_strength");
+          var pass_strength = document.getElementById("pass_strength");
+
+
+          //TextBox left blank.
+          if (password.length == 0) {
+              pass_strength.innerHTML = "";
+              return;
+          }
+
+          //Regular Expressions.
+          var regex = new Array();
+          regex.push("[A-Z]"); //Uppercase Alphabet.
+          regex.push("[a-z]"); //Lowercase Alphabet.
+          regex.push("[0-9]"); //Digit.
+          regex.push("[$@$!%*#?&]"); //Special Character.
+
+          var passed = 0;
+
+          //Validate for each Regular Expression.
+          for (var i = 0; i < regex.length; i++) {
+              if (new RegExp(regex[i]).test(password)) {
+                  passed++;
+              }
+          }
+
+          //Validate for length of Password.
+          if (passed > 2 && password.length > 8) {
+              passed++;
+          }
+
+          //Display status.
+          var color = "";
+          var strength = "";
+          switch (passed) {
+              case 0:
+              case 1:
+                  strength = "Weak";
+                  color = "red";
+                  width= "20%"
+                  break;
+              case 2:
+                  strength = "Good";
+                  color = "darkorange";
+                  width= "40%"
+                  break;
+              case 3:
+                  strength = "Strong";
+                  color = "green";
+                  width= "60%"
+                  break;
+              case 4:
+                  strength = "Strong";
+                  color = "green";
+                  width= "80%"
+                  break;
+              case 5:
+                  strength = "Very Strong";
+                  color = "darkgreen";
+                  width= "100%"
+                  break;
+          }
+          pass_strength.innerHTML = strength + " &nbsp;<span class="text-default" style="font-size:5;">&nbsp; The password should be strong to be valid</span>";
+          pass_strength.style.color = color;
+          password_strength.style.background = color;
+          password_strength.style.width = width;
+      };
+  </script> -->
+
+
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="mrao-icons icon-lock-circle"></i>
+                        </div>
+                      </div>
+                      <input type="password" id="txtConfirmPassword" class="form-control" name='password1' placeholder="Confirm Password" required>
+                    </div>
+
+
+                    <script type="text/javascript">
+                                  function Validate()
+                                  {
+                                    var password = document.getElementById("txtPassword").value;
+                                    var confirmPassword = document.getElementById("txtConfirmPassword").value;
+                                      if (password != confirmPassword)
+                                      {
+                                        alert("Password doesn't match");
+                                        return false;
+                                      }
+                                      return true;
+                                 }
+                    </script>
+
+
+                    <div class="form-check text-left">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" onclick="showPass()">
+                        <span class="form-check-sign"></span>
+                        Show Password
+                      </label>
+                    </div>
+
+                    <script type="text/javascript">
+                                  function showPass()
+                                  {
+                                     var showp = document.getElementById("txtPassword");
+                                     var showcp = document.getElementById("txtConfirmPassword");
+                                       if (showp.type === "password")
+                                       {
+                                         showp.type = "text";
+                                         showcp.type = "text";
+                                       }
+                                       else
+                                       {
+                                         showp.type = "password";
+                                         showcp.type = "password";
+                                       }
+                                 }
+                    </script>
+
+                    <div class="form-check text-left text-info">
+                      <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" id="chkbox" required>
+                        <span class="form-check-sign"></span>
+                        I agree to the
+                        <a href="{% static 'termsandconditions.txt' %}" class="text-info" id="checkbox">terms and conditions</a>
+
+                      </label>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                  <button type="submit" onclick="return Validate()" name='register' href="" class="btn btn-info btn-round btn-lg">Sign-Up</button>
+                  <a href="{% url 'users:account_login' %}" type="submit" onclick="" href="" class="btn btn-info btn-round btn-lg">LogIn Instead</a>
+                </div>
+               </form>
+             </div>
+           </div>
+
+
+        </div>
+        </div>
+          <div id="square1" class="square square-1"></div>
+          <div id="square2" class="square square-2"></div>
+          <div id="square3" class="square square-3"></div>
+          <div id="square4" class="square square-4"></div>
+          <div id="square5" class="square square-5"></div>
+          <div id="square6" class="square square-6"></div>
+          <div class="register-bg"></div>
+        </div>
+      </div>
+    <br>
+  </div>
+</div>
+
+{% endblock %}

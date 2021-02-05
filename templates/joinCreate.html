@@ -1,0 +1,33 @@
+{{message}}
+<div>
+            <h1>Create Your own team</h1>
+        <form action="{% url 'portal:home' %}" method="POST">
+            {% csrf_token %}
+        <input type="text" name="teamName">
+        <button id="create" name="create">CREATE TEAM</button>
+        <h1>Join Team</h1>
+        <input type="text" placeholder="team token" name="token">
+        <button name="join">JOIN</button>
+        </form>
+
+</div>
+
+<script>
+    /*
+    create = document.getElementById("create");
+    create.onclick = createTeam;
+    function createTeam() {
+        alert("uiuh");
+        url = "/roboPortal/create/";
+        alert(url);
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  //xhttp.send();
+}
+*/
+</script>

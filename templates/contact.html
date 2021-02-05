@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}
+ROBOTiX Club • Contact
+{% endblock %}
+
+{% block content %}
+<div class="register-page">
+  <div class="wrapper">
+      <div class="page-header">
+        <div class="page-header-image"></div>
+        <div class="content">
+          <div class="container">
+            <div class="row">
+
+              <div class="col-lg-5 col-md-6 offset-lg-0 offset-md-3">
+                <div id="square7" class="square square-7"></div>
+                <div id="square8" class="square square-8"></div>
+                <form name="myform" action="" method="POST">
+                  {% csrf_token %}
+                <div class="card card-register" >
+                  <div class="card-header">
+                    <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
+                    <h4 class="card-title" style="color:#dadada">&nbsp;Contact</h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="mrao-icons icon-single-02"></i>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" name='name' placeholder="Full Name" required>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="mrao-icons icon-email-85"></i>
+                          </div>
+                        </div>
+                        <input type="email" placeholder="Email" name='email' class="form-control" pattern="[^ @]*@[^ @]*" required>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="mrao-icons icon-pencil"></i>
+                          </div>
+                        </div>
+                        <input type="text" id="subject" name="message" class="form-control" placeholder="Write your message" maxlength="100" required>
+                      </div>
+                  </div>
+                  <br><br>
+                  <div class="card-footer">
+                    <button type="submit" onclick="" href="" class="btn btn-info btn-round btn-lg">Submit</button>
+                  </div>
+                </div>
+              </form>
+              </div>
+
+              <div class="col-lg-7 col-md-8 offset-lg-0 offset-md-3">
+
+                <div class="card card-register map" id="map">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.5489569646024!2d81.60284041445824!3d21.249727185575026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dde213f66723%3A0x21543965c50c43c7!2sNational%20Institute%20of%20Technology%2C%20Raipur!5e0!3m2!1sen!2sin!4v1582391271494!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+
+                </div>
+
+
+                <!-- <script>
+        function initMap() {
+          // Styles a map in night mode.
+          var nitrr = {lat: 21.249246, lng: 81.605196};  //lat: 21.2498822, lng: 81.6037202
+          var map = new google.maps.Map(document.getElementById('map'),
+          { center: nitrr,
+            zoom: 16,
+            styles: [
+    {
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#1d2c4d"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#8ec3b9"
+        }
+      ]
+    },
+    {
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#1a3646"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.country",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#4b6878"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.land_parcel",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#64779e"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.province",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#4b6878"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape.man_made",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#334e87"
+        }
+      ]
+    },
+    {
+      "featureType": "landscape.natural",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#023e58"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#283d6a"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#6f9ba5"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#1d2c4d"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.park",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#023e58"
+        }
+      ]
+    },
+    {
+      "featureType": "poi.park",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#3C7680"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#304a7d"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#98a5be"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#1d2c4d"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#2c6675"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+          "color": "#255763"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#b0d5ce"
+        }
+      ]
+    },
+    {
+      "featureType": "road.highway",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#023e58"
+        }
+      ]
+    },
+    {
+      "featureType": "transit",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#98a5be"
+        }
+      ]
+    },
+    {
+      "featureType": "transit",
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#1d2c4d"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.line",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+          "color": "#283d6a"
+        }
+      ]
+    },
+    {
+      "featureType": "transit.station",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#3a4762"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#0e1626"
+        }
+      ]
+    },
+    {
+      "featureType": "water",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#4e6d70"
+        }
+      ]
+    }
+  ]
+          });
+          var marker = new google.maps.Marker({position: nitrr, map: map});
+        }
+      </script> -->
+      <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBU9p6DxVtwnR57dELvGaQ1h4pcEYx8DkI&callback=initMap" async defer type="text/javascript"></script> -->
+
+              </div>
+
+            </div>
+            <div class="register-bg"></div>
+            <div id="square7" class="square square-7"></div>
+            <div id="square8" class="square square-8"></div>
+            <div id="square1" class="square square-1"></div>
+            <div id="square2" class="square square-2"></div>
+            <div id="square3" class="square square-3"></div>
+            <div id="square4" class="square square-4"></div>
+            <div id="square5" class="square square-5"></div>
+            <div id="square6" class="square square-6"></div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+<br><br>
+</div>
+{% endblock %}

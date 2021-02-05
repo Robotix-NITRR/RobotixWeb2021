@@ -1,0 +1,339 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ROBOTiX CLUB </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="https://www.facebook.com/manoj.rao.2208" />
+<!-- css -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href='{% static "materialize/css/materialize.css" %}' media="screen,projection" />
+<link rel="stylesheet" href='{% static "css/materialize/materialize.min.css" %}' media="screen,projection" />
+<link href='{% static "css/bootstrap.min.css" %}' rel="stylesheet" />
+<link href='{% static "css/fancybox/jquery.fancybox.css" %}' rel="stylesheet">
+<link href='{% static "css/flexslider.css" %}' rel="stylesheet" />
+<link href='{% static "css/style.css" %}' rel="stylesheet" />
+<link rel="icon" type="image/png" href='{% static "img/favicon.png" %}'>
+
+</head>
+<body>
+<div id="wrapper">
+	<!-- start header -->
+	<header>
+			<div class="navbar navbar-default navbar-static-top">
+					<div class="container">
+							<div class="navbar-header">
+									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+											<span class="icon-bar"></span>
+											<span class="icon-bar"></span>
+											<span class="icon-bar"></span>
+									</button>
+								<a class="navbar-brand" href='{% url "index" %}'><img src='{% static "img/RobotixLogo.png" %}' width="40" height="37">  ROBOTiX</a>
+							</div>
+							<div class="navbar-collapse collapse ">
+									<ul class="nav navbar-nav">
+										<li class="active"><a class="waves-effect waves-dark" href='{% url "index" %}'>Home</a></li>
+										<li><a class="waves-effect waves-dark" href='{% url "about" %}'>About Us</a></li>
+										<li><a class="waves-effect waves-dark" href='{% url "event" %}'>Events</a></li>
+										<li><a class="waves-effect waves-dark" href='{% url "achievement" %}'>Achievements</a></li>
+
+										<li class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">More <i class="fa fa-caret-down"></i></a>
+												<div class="dropdown-menu">
+												<ul style="list-style-type:none;padding-left:0;text-align:center;">
+													 <li><b><a style="color:inherit;text-decoration:none;color:#000000;" class="waves-effect waves-dark" href='{% url "gallery" %}'>Gallery</a></b></li>
+													 <li><b><a style="color:inherit;text-decoration:none;color:#000000;" class="waves-effect waves-dark" href='{% url "info:diy" %}'>DIY</a></b></li>
+													 <li><b><a style="color:inherit;text-decoration:none;color:#000000;" class="waves-effect waves-dark" href='{% url "info:fyi" %}'>FYI</a></b></li>
+													 <li><b><a style="color:inherit;text-decoration:none;color:#000000;" class="waves-effect waves-dark" href='{% url "alumni" %}'>Alumni</a></b></li>
+												</ul>
+												<style media="screen">
+													.nav-item ul li a {
+														background-color: white;
+														color: inherit;
+													}
+													.nav-item ul li a:hover {
+														background-color: black;
+														color: white;
+													}
+												</style>
+												</div>
+										</li>
+										<li><a class="waves-effect waves-dark" href='{% url "contact" %}'>Contact</a></li>
+							</div>
+					</div>
+			</div>
+</header><!-- end header -->
+
+
+    <section id="banner">
+
+  	<!-- Slider -->
+          <div id="main-slider" class="flexslider">
+              <ul class="slides">
+
+  			  <li>
+                  <img src='{% static "img/slides/1.jpg" %}' alt=""/>
+                   <div class="flex-caption">
+                      <h3>Robotix Club</h3>
+  					<p>National Institute of Technolgy, Raipur</p>
+                  </div>
+                </li>
+
+  			  <li>
+                  <img src='{% static "img/slides/2.jpg" %}' alt="" />
+                  	<div class="flex-caption">
+                      <h3>Robotix Club</h3>
+  					<p>National Institute of Technology, Raipur</p>
+                  </div>
+                </li>
+
+  <!--_____________________________________ For Mega Event Banner______________________________________________________
+  			  <li>
+                  <img src='{% static "img/slides/3.jpg" %}' alt="" />
+                  	<div class="flex-caption">
+                      <h3>Robotix Club</h3>
+  					<p>National Institute of Technology, Raipur</p>
+                  </div>
+                </li>
+  _____________________________________________________________________________________________________________________-->
+
+  			</ul>
+          </div>
+  	<!-- end slider -->
+  	</section>
+  </div>
+		<section class="dishes">
+
+
+		<div class="container">
+	 	<div class="row">
+			<div class="col-md-12">
+				<div class="aligncenter"><h3 class="aligncenter"><span style="color:black;"><strong>ROBOTiX CLUB - </span>NIT Raipur</strong></h3>
+				     <p style="color:#000000;">We, Robotix Club of NIT Raipur, constitute enthusiasts and experts in the field of robotics who deal with the application of robotics in real life situations.
+					 <br/>So if you want to build your JARVIS, then you have come at the right place.
+                     <br/>From a machine designed for lifting metal scraps to Robots capable of human interaction, we have come a long way.
+					 <br/>The Club is focused on the development of the students in the field of robotics.
+					 <br/>The main function of our club is to organise workshops, exhibitions and competitions for the students to showcase their talent and identity their interests in this field.
+					 <br/>Our main aim is to provide the resources and knowledge to any robotics enthusiast for their development in this field.
+					 </p>
+					 </div>
+				<br/>
+			</div>
+		</div>
+		</div>
+		</section>
+	<section id="content">
+	<div class="container">
+
+		<div class="row showcase-section" style="text-align:center;">
+				<h3><b>Dr. A M Rawani</b><h5><span class="color"><b>( Director NIT Raipur )</b></span></h5></h3>
+				<div class="col-md-6" style="text-align:center;">
+      				<img src='{% static "img/AMRawani.png" %}' alt="showcase image" width="170" height="220" title="Dr. A M Rawani (Director, NIT Raipur)">
+				</div>
+				<br>
+				<div class="col-md-6">
+					<div class="about-text">
+					<div class="aligncenter">
+						<p style="color:#ffffff;">The Institute is committed to the challenging task of development of technical education by preparing seasoned graduates in highly sophisticated field of engineering and technology.  </p>
+						<p style="color:#ffffff;">Development of India as an emerging industrial power is a demanding exercise as it involves the combination of cost effectiveness and efficiency along with producing world-class technology at the cutting edge.</p>
+					    <p style="color:#ffffff;">For about five decades we have been doing it with sincerity and commitment at NIT Raipur.</p>
+					</div>
+					</div>
+				</div>
+				<br>
+		</div>
+	</div>
+	<br>
+	</section>
+	<section class="section-padding gray-bg">
+		<div class="container">
+			<div class="row showcase-section" style="text-align:center;">
+					<h3><b>Dr. Samir Bajpai</b><h5><span class="color"><b>( CDC Head - NIT Raipur )</b></span></h5></h3>
+					<div class="col-md-6" style="text-align:center;">
+	      				<img src='{% static "img/SBajpai.jpg" %}' alt="showcase image" width="150" height="200" title="Dr. Samir Bajpai (Head, CDC)">
+						<p>                                </p>
+						<p>                                </p>
+						<p style="color=#ffffff"><strong>E Mail: <a href="mailto:head.cdc@nitrr.ac.in" title="head.cdc@nitrr.ac.in"><span class="color">head.cdc@nitrr.ac.in</span></a></strong></p>
+					</div>
+					<br>
+					<div class="col-md-6">
+						<div class="about-text">
+						<div class="aligncenter">
+							<p style="color:#ffffff;">The Career Development Centre (CDC) is functioning under the leadership and guidance of Prof. Samir Bajpai, an alumnus of NIT Raipur and IIT Kanpur.</p>
+						<p style="color:#ffffff;">He has given his services to the department of training & placement for over two decades. Now, he continues to mentor the training and placement activities as Head, CDC.</p>
+					    <p style="color:#ffffff;">He keenly looks forward to establish and steer a strong and symbiotic relationship with the industries and the corporate world.</p>
+						</div>
+						</div>
+					</div>
+			</div>
+		</div><!--head.cdc@nitrr.ac.in-->
+	 </section>
+	<section id="content">
+		<div class="container">
+			<div class="row showcase-section" style="text-align:center;">
+			<h3><b>Dr.Rajesh Doriya</b><h5><span class="color"><b>( Faculty Incharge - ROBOTiX CLUB )</b></span></h5></h3>
+				<div class="col-md-6">
+					<div class="about-text" >
+					<div class="aligncenter">
+						<img src='{% static "img/FacultyInc.png" %}' alt="showcase image" width="170" height="220" title="Dr. Rajesh Doriya (Dept. of IT)">
+					<p>                                </p>
+					<p>                                </p>
+					<p style="color=#ffffff"><strong>Phone: </strong><a href="tel:+91-7805984189" title="+91-7805984189"><span class="color">+91-7805984189</span></a><br><strong>E Mail: </strong><a href="mailto:rajeshdoriya.it@nitrr.ac.in" title="rajeshdoriya.it@nitrr.ac.in"><span class="color">rajeshdoriya.it@nitrr.ac.in</span></a></p>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-6" style="text-align:center;">
+					<p style="color:#ffffff;">The club was founded in the year 2014 with the purpose of developing technological skills in the diverse fields of mechatronics and robotics by transcending the theoretical knowledge into live applications to provide modelled solutions for real-world problems.</p>
+						<p style="color:#ffffff;">The Club ignites creativity and passion towards this promising and fast-developing area by organising workshops throughout the academic session and events in the College's Technical Fest.</p>
+					    <p style="color:#ffffff;">The club provides an ambience for students to prepare and to showcase their skills at robotics events held all across India and Asia in various colleges with the aim to add more feathers in the cap.</p>
+					    <p style="color:#ffffff;">The ultimate goal of ROBOTiX Club NIT Raipur is to educate more students and make robotics an everyday phenomenon.</p>
+				</div>
+			</div>
+		</div>
+		<br/><br/><br/>
+	</section>
+	<footer>
+	<div class="container">
+	  <div class="row">
+	    <div class="col-sm-3">
+	      <div class="widget">
+	        <h5 class="widgetheading" style="color:#ffffff;">Our Contact</h5>
+	        <address>
+	        <strong><a href='{% url "index" %}'>ROBOTiX CLUB - NIT Raipur</a></strong><br>
+	        Great Eastern Rd, Amanaka, Raipur<br>
+	         Chhattisgarh - 492010, India.</address>
+	        <p>
+	          <ul class="link-list">
+	          <li><a class="waves-effect waves-dark" href="tel:+918442001772" target="_blank" title="Bharat Dhadich">Bharat - +91-8442001772</a><br><a class="waves-effect waves-dark" href="tel:+919893902401" target="_blank" title="Suhas">Suhas - +91-9893902401</a></li>
+	          <li><a class="waves-effect waves-dark" href="mailto:robotixclub@nitrr.ac.in" target="_blank">robotixclub@nitrr.ac.in</a></li>
+	        </p>
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <div class="widget">
+	        <h5 class="widgetheading" style="color:#ffffff;">Quick Links</h5>
+	        <ul class="link-list">
+	          <li><a class="waves-effect waves-dark" href='{% url "index" %}' >Home</a></li>
+	          <li><a class="waves-effect waves-dark" href='{% url "about" %}' >About Us</a></li>
+	          <li><a class="waves-effect waves-dark" href='{% url "about" %}' >Our Team</a></li>
+	          <li><a class="waves-effect waves-dark" href="{% url 'contact' %}">Contact us</a></li>
+	          <li><a class="waves-effect waves-dark" href="http://www.nitrr.ac.in/" target="_blank">NIT Raipur</a></li>
+	          <li><a class="waves-effect waves-dark" href="https://www.google.com/maps/place/National+Institute+of+Technology,+Raipur/@21.2497222,81.6028404,17z/data=!3m1!4b1!4m5!3m4!1s0x3a28dde213f66723:0x21543965c50c43c7!8m2!3d21.2497222!4d81.6050291" target="_blank">Location</a></li>
+
+	        </ul>
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	      <div class="widget">
+	        <h5 class="widgetheading" style="color:#ffffff;">Useful Links</h5>
+	        <ul class="link-list">
+	          <li><p><strong>NIT Raipur</strong> - <a class="waves-effect waves-dark" href="http://www.nitrr.ac.in" target="_blank">http://www.nitrr.ac.in</a></p></li>
+						<li><p><strong>CDC - NIT Raipur</strong> - <a class="waves-effect waves-dark" href="http://cdc.nitrr.ac.in" target="_blank">http://cdc.nitrr.ac.in/</a></p></li>
+						<li><p><strong>ROBOTiX CLUB 2019 Brochure</strong> - <a class="waves-effect waves-dark" href="{% static '../media/docs/brochure.pdf' %}" title="ROBOTiX CLUB Brochure" download>here</a></p></li>
+	          <li><p><strong>ROBOTiX CLUB</strong> - <a class="waves-effect waves-dark" href="https://forms.gle/tM1iYQFFwoKQra7D8" title="Registration Here" target="_blank">Register here</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	    <div class="col-sm-3">
+	        <div class="widget">
+	        <h5 class="widgetheading" style="color:#ffffff;">Social Platforms</h5>
+	        <ul class="link-list">
+	          <li><p><strong>Instagram </strong><a class="waves-effect waves-dark" href="https://www.instagram.com/robotix_nitrr" target="_blank">https://www.instagram.com/robotix_nitrr</a></p></li>
+	          <li><p><strong>Facebook </strong><a class="waves-effect waves-dark" href="https://www.facebook.com/nitrrobots16" target="_blank">https://www.facebook.com/nitrrobots16</a></p></li>
+	          <li><p><strong>Twitter <br></strong><a class="waves-effect waves-dark" href="" target="_blank">https://www.twitter.com/</a></p></li>
+	          <li><p><a class="waves-effect waves-dark" href="#"></a></p></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div id="sub-footer">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-lg-3">
+	        <div class="copyright">
+	          <p  style="font-size:11px">
+	            <span>&copy; 2019 All Rights Reserved. </span> <span class="color"><a href="{% url 'webteam' %}" target="_blank">WEB TEAM ROBOTiX</a></span>
+	          </p>
+	        </div>
+	      </div>
+	      <div class="col-lg-3">
+	        <div class="copyright">
+	          <p  style="font-size:11px">
+	            <span><i class="fa fa-code custom" style="font-size:14px"></i></span>
+	            <span class="color"><a href="https://www.linkedin.com/in/manoj-rao-a56868124/" target="_blank">Manoj Rao</a>,
+	                                <a href="https://www.linkedin.com/in/ishneet-bhatia-b710b5190/" target="_blank">Ishneet Bhatia </a>&amp;
+	                                <a href="https://www.linkedin.com/in/nihal-dewangan-77a8aa16a" target="_blank">Nihal Dewangan</a>
+	            </span>
+	          </p>
+	        </div>
+	      </div>
+	      <div class="col-lg-2">
+	        <div class="copyright">
+	          <p  style="font-size:11px">
+	          	<span><i class="fa fa-globe" style="font-size:14px"></i></span><span class="color"><a href="{% url 'webteam' %}" target="_blank">   Version 1.0.0</a></span>
+	          </p>
+	        </div>
+	      </div>
+	      <div class="col-lg-4"  style="font-size:11px">
+	        <ul class="social-network">
+	          <li><a class="waves-effect waves-dark" href="https://www.facebook.com/nitrrobots16/" data-placement="top" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+	          <li><a class="waves-effect waves-dark" href="https://www.instagram.com/robotix_nitrr" data-placement="top" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+	          <li><a class="waves-effect waves-dark" href="" data-placement="top" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+	          <li><a class="waves-effect waves-dark" href="https://in.linkedin.com/company/robotix-club-nit-raipur" data-placement="top" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+	          <li><a class="waves-effect waves-dark" href="mailto:robotixclub@nitrr.ac.in" data-placement="top" target="_blank" title="Gmail"><i class="fa fa-envelope"></i></a></li>
+	        </ul>
+	      </div>
+	    </div>
+
+			<div class="row" style="text-align:center">
+		 <div class="col-lg-8">
+			 <span class="color" style="text-align:right">Visits : </span>
+		 </div>
+		 <div class="col-lg-4" id='CounterVisitor' style="color:white;text-align:left">
+			 <span class='c-item' >0</span>
+		 </div>
+
+		 <script type="text/javascript">
+			 var n = localStorage.getItem('on_load_counter');
+			 if (n==null){
+				 n=0;
+			 }
+			 n++;
+			 localStorage.setItem('on_load_counter',n);
+			 document.getElementById('CounterVisitor').innerHTML = n;
+		 </script>
+		</div>
+
+
+		</div>
+	</div>
+
+	</footer>
+	</div>
+	<a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up active"></i></a>
+	<!-- javascript
+		================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src='{% static "js/jquery.js" %}'></script>	<script src='{% static "js/jquery.easing.1.3.js" %}'></script>
+	<script src='{% static "materialize/js/materialize.js" %}'></script>
+	<script src='{% static "js/jquery.fancybox.pack.js" %}'></script>
+	<script src='{% static "js/jquery.fancybox-media.js" %}'></script>
+	<script src='{% static "js/jquery.flexslider.js" %}'></script>
+	<script src='{% static "js/animate.js" %}'></script>
+	<script src='{% static "js/bootstrap.min.js" %}'></script>
+	<script src='{% static "js/jquery.mousewheel.js" %}'></script>
+
+	<!-- // Vendor Scripts -->
+	<script src='{% static "js/modernizr.custom.js" %}'></script>
+	<script src='{% static "js/jquery.isotope.min.js" %}'></script>
+	<script src='{% static "js/jquery.magnific-popup.min.js" %}'></script>
+	<script src='{% static "js/animate.js" %}'></script>
+	<script src='{% static "js/custom.js" %}'></script>
+	<script src='{% static "js/flexslider/jquery.flexslider.js" %}'></script>
+
+
+	</body>
+</html>

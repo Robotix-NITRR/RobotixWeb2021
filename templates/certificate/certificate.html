@@ -45,6 +45,9 @@
 
     <div class="container inner-container ">
       <div class="row second-inner">
+
+        {% if certificate.image %}
+
         <div class="col-lg-6">
           <form class="certificate-form" action="" method="POST">
             {% csrf_token %}
@@ -67,10 +70,36 @@
         <div class="col-lg-6">
           <div class="image-container">
             <div class="main-container">
-              <img src="https://dzf8vqv24eqhg.cloudfront.net/userfiles/2086/3660/ckfinder/images/7(4).jpg" id="certificate-image" alt="certificate">
+                <img src="/media/{{certificate.image}}" alt="">
+                <!-- <img src="https://dzf8vqv24eqhg.cloudfront.net/userfiles/2086/3660/ckfinder/images/7(4).jpg" id="certificate-image" alt="certificate"> -->
             </div>
           </div>
         </div>
+
+        {% else %}
+
+        <div class="col-lg-6">
+          <form class="certificate-form" action="" method="POST">
+            {% csrf_token %}
+            <div class="card card-register" style="margin-left:300px">
+              <div class="card-header">
+                <img class="card-img" src="{% static 'img/certificate/Square.jpg' %}" alt="Card image">
+                <h4 class="card-title" id="card-title" style="color:#dadada">&nbsp;RoboQuiz 2.0</h4>
+              </div>
+              <div class="card-body">
+                <h4>Certificate ID</h4>
+                <label for="url_key"></label>
+                <input type="text" name="url_key" id="certificate-id" class="form-control" placeholder="Certificate-ID" required>
+              </div>
+              <div class="card-footer submit-section">
+                <button type="submit" name="Submit" ID="submit" onclick="" class="btn btn-info btn-round btn-lg">Submit</button>&nbsp;
+              </div>
+            </div>
+          </form>
+        </div>
+
+        {% endif %}
+
       </div>
     </div>
 </div>

@@ -35,7 +35,7 @@ class Certificate(models.Model):
     #     return reverse("search")
 
     def __str__(self):
-        return self.name + "certificate for event " + self.event.title
+        return self.name + " certificate for event " + self.event.title
 
 
 

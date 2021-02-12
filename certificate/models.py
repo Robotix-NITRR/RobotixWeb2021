@@ -8,6 +8,7 @@ import urllib.request
 from django.core.files import File
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db.models.signals import post_save,post_delete
+from django.core.mail import EmailMultiAlternatives
 
 import io
 import os
@@ -30,9 +31,7 @@ class Certificate(models.Model):
     name = models.CharField(max_length=50)
     url_key = models.UUIDField(default=uuid.uuid4,unique=True, blank=True,  null=True)
     image = models.ImageField(upload_to='certificate/',null=True,blank=True)
-
-    # def get_absolute_url(self):
-    #     return reverse("search")
+    email = models.EmailField(null=True)
 
     def __str__(self):
         return self.name + " certificate for event " + self.event.title
@@ -50,6 +49,7 @@ def img_handler(created,instance,*args,**kwargs):
             instance.save()
         else:
             file_name = image_url.split('/')[-1]
+            # print(file_name)
         
             # Create a temporary file
             lf = tempfile.NamedTemporaryFile()
@@ -71,21 +71,25 @@ def img_handler(created,instance,*args,**kwargs):
             d1.text((400, 270), event_name,  fill="black")
             new_img_temp_file = tempfile.NamedTemporaryFile(suffix = '.jpeg')
             my_img.save(new_img_temp_file)
+
             instance.image.save(file_name, files.File(new_img_temp_file))
             instance.save()
+
+            html_content = '<h3>This is an sample yet <strong>important</strong> message to all the participants.</h3>'
+            msg = EmailMultiAlternatives(
+                'Get your certificate',               # subject,
+                'Download this certificate here!',      # text_content,
+                'robotixclub@nitrr.ac.in',                # from_email,
+                ['{}'.format(instance.email),],             # to email(s)
+            )
+            msg.attach_alternative(html_content, "text/html")
+            msg.attach_file('media/{}'.format(instance.image))
+            msg.send()
+
 
 @receiver(post_delete, sender=Certificate)
 def auto_delete_file_on_delete(sender, instance, **kwargs):
     if instance.image:
         if os.path.isfile(instance.image.path):
             os.remove(instance.image.path)
-
-
-
-# @receiver(post_save,sender=Certificate)
-# def uuid_create(created,instance,*args,**kwargs):
-#     if created:
-#         uuid_create = uuid.uuid4()
-#         instance.url_key = uuid_create
-#         instance.save()
 

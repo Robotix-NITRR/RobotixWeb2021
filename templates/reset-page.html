@@ -20,19 +20,20 @@ ROBOTiX Club • Reset Password
               <form name="myform" action="" method="POST">
                 {% csrf_token %}
                 <h4 class="text-danger">{{msg}}</h4>
-              <div class="card card-register" >
-                <div class="card-header">
-                  <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
-                  <h4 class="card-title" style="color:#dadada">&nbsp;Reset</h4>
-                </div>
-                <div class="card-body">
+                <div class="card card-register">
+                  <div class="card-header">
+                    <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
+                    <h4 class="card-title" style="color:#dadada">&nbsp;Reset</h4>
+                  </div>
+                  <div class="card-body">
                     <div id="passid" class="input-group">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
                           <i class="mrao-icons icon-lock-circle"></i>
                         </div>
                       </div>
-                      <input type="password" id="txtPassword1" name='new_password1' class="form-control" placeholder="New Password"  required>
+                      <input type="password" id="txtPassword1" name='new_password1' class="form-control"
+                        placeholder="New Password" required>
                     </div>
                     <div id="passid" class="input-group">
                       <div class="input-group-prepend">
@@ -40,7 +41,8 @@ ROBOTiX Club • Reset Password
                           <i class="mrao-icons icon-lock-circle"></i>
                         </div>
                       </div>
-                      <input type="password" id="txtPassword2" name='new_password2' class="form-control" placeholder="Confirm Password"  required>
+                      <input type="password" id="txtPassword2" name='new_password2' class="form-control"
+                        placeholder="Confirm Password" required>
                     </div>
 
                     <div class="form-check text-left">
@@ -52,35 +54,33 @@ ROBOTiX Club • Reset Password
                     </div>
 
                     <script type="text/javascript">
-                                  function showPass()
-                                  {
-                                     var showp = document.getElementById("txtPassword");
-                                     var showp1 = document.getElementById("txtPassword1");
-                                     var showp2 = document.getElementById("txtPassword2");
+                      function showPass() {
+                        var showp = document.getElementById("txtPassword");
+                        var showp1 = document.getElementById("txtPassword1");
+                        var showp2 = document.getElementById("txtPassword2");
 
-                                       if (showp.type === "password")
-                                       {
-                                         showp.type = "text";
-                                         showp1.type = "text";
-                                         showp2.type = "text";
+                        if (showp.type === "password") {
+                          showp.type = "text";
+                          showp1.type = "text";
+                          showp2.type = "text";
 
-                                       }
-                                       else
-                                       {
-                                         showp.type = "password";
-                                         showp1.type = "password";
-                                         showp2.type = "password";
+                        }
+                        else {
+                          showp.type = "password";
+                          showp1.type = "password";
+                          showp2.type = "password";
 
-                                       }
-                                 }
+                        }
+                      }
                     </script>
 
+                  </div>
+                  <div class="card-footer">
+                    <button type="submit" onclick="" href="" class="btn btn-info btn-round btn-lg">Reset
+                      Password</button>
+                  </div>
                 </div>
-                <div class="card-footer">
-                  <button type="submit" onclick="" href="" class="btn btn-info btn-round btn-lg">Reset Password</button>
-                </div>
-              </div>
-            </form>
+              </form>
 
             </div>
           </div>
@@ -94,6 +94,6 @@ ROBOTiX Club • Reset Password
         </div>
       </div>
     </div>
-    </div>
   </div>
-    {% endblock %}
+</div>
+{% endblock %}

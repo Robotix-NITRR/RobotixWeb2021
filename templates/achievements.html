@@ -8,51 +8,53 @@ ROBOTiX Club • Achievements
 {% block content %}
 
 <img src="assets/img/dots.png" class="dots">
-  <img src="assets/img/path4.png" class="path">
+<img src="assets/img/path4.png" class="path">
 
-  <section class="section section-lg">
-      <section class="container"><br><br>
-         <div class="row"><br>
-            <div class="page-head-title">
-                <h5 class="page-title-sim">Achievements</h5>
-              </div><br>
-              {% for achieve in achievement %}
-              <div class="col-lg-12 col-md-12"><br>
-                <div class="card card-coin card-success">
-			               <br><br><br><br><br>
+<section class="section section-lg">
+  <section class="container"><br><br>
+    <div class="row"><br>
+      <div class="page-head-title">
+        <h5 class="page-title-sim">Achievements</h5>
+      </div><br>
+      {% for achieve in achievement %}
+      <div class="col-lg-12 col-md-12"><br>
+        <div class="card card-coin card-success">
+          <br><br><br><br><br>
 
-                     <div class="card-header">
-                       <h2 class="text-success"><strong>{{achieve.title}}</strong></h2>
-                     </div>
-                <div class="card-body">
-                  <p class="text-white h5 text-center">{{achieve.desc}}
-                  </p>
-		           </div>
-		         </div>
+          <div class="card-header">
+            <h2 class="text-success"><strong>{{achieve.title}}</strong></h2>
           </div>
-          {% endfor %}
-          <div class="col-lg-12 col-md-12"><br>
-          <div class="card card-coin card-success">
-            <br><br><br><br><br>
-            <div class="card-header">
-              <h2 class="text-success"><strong>ROBOCON</strong></h2>
-            </div>
-            <div class="card-body">
-            <p class="text-white h5 text-center">Robocon (short for Robotic Contest) is organized by Asia-Pacific Broadcasting Union (ABU) A Collection of over 20 countries of Asia Pacific Region.
-              In 2018, the competition was held in Vietnam where each country presents a team. Therefore, A Competition to select the
+          <div class="card-body">
+            <p class="text-white h5 text-center">{{achieve.desc}}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="col-lg-12 col-md-12"><br>
+        <div class="card card-coin card-success">
+          <br><br><br><br><br>
+          <div class="card-header">
+            <h2 class="text-success"><strong>ROBOCON</strong></h2>
+          </div>
+          <div class="card-body">
+            <p class="text-white h5 text-center">Robocon (short for Robotic Contest) is organized by Asia-Pacific
+              Broadcasting Union (ABU) A Collection of over 20 countries of Asia Pacific Region.
+              In 2018, the competition was held in Vietnam where each country presents a team. Therefore, A Competition
+              to select the
               best team from India was held in march 2018 at MIT Pune.
               <br>A team of 40 members from all years participated in this National Level Competition.
             </p>
+          </div>
         </div>
-        </div>
 
 
 
 
-       </div>
+      </div>
 
-        </div>
-      </section>
-	</section>
+    </div>
+  </section>
+</section>
 
 {% endblock %}

@@ -9,40 +9,41 @@ Robotix Club • Sponsors
 <img src='{% static "assets/img/dots.png" %}' class="dots">
 <img src='{% static "assets/img/path4.png" %}' class="path">
 
-  <style>
+<style>
 
-  </style>
-  <!-- Navbar -->
+</style>
+<!-- Navbar -->
 
-  <section class="section section-lg">
-      <section class="container"><br><br>
-            <div class="page-head-title">
-                <h5 class="page-title-sim">Sponsors</h5>
-              </div><br>
+<section class="section section-lg">
+  <section class="container"><br><br>
+    <div class="page-head-title">
+      <h5 class="page-title-sim">Sponsors</h5>
+    </div><br>
 
-          <!-- Pehla Loop Web -->
+    <!-- Pehla Loop Web -->
 
-          <div class="row" align="center">
-            <h1 class="text-info"><strong>Type of Sponsor</strong></h1>
+    <div class="row" align="center">
+      <h1 class="text-info"><strong>Type of Sponsor</strong></h1>
 
-              {% for web in web %}
-            <div class="col-xs-3 col-sm-3">
-            <div class="team-member" align="center">
-                      <a href="" target="_blank"><img class="img-rounded" src='{{ web.img.url }}' style="border-radius:75px" width="150" height="150" title=""></a>
-                      <h4><b>Name of Sponsor</b></h4>
-                      <span class="deg">{{ web.branch }}</span><br>
+      {% for web in web %}
+      <div class="col-xs-3 col-sm-3">
+        <div class="team-member" align="center">
+          <a href="" target="_blank"><img class="img-rounded" src='{{ web.img.url }}' style="border-radius:75px"
+              width="150" height="150" title=""></a>
+          <h4><b>Name of Sponsor</b></h4>
+          <span class="deg">{{ web.branch }}</span><br>
 
-            </div>
-            </div>
-             {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
 
-          </div>
+    </div>
 
-          <!-- Dusra Loop Khatam -->
-          <br>
+    <!-- Dusra Loop Khatam -->
+    <br>
 
-      </section>
-    </section>
+  </section>
+</section>
 
 
 {% endblock %}

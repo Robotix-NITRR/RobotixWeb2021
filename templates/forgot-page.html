@@ -4,54 +4,56 @@
 {% block title %} ROBOTiX Club • Forgot Password {% endblock %}
 
 {% block content %}
-  <div class="register-page">
-    <div class="wrapper">
-      <div class="page-header">
-        <div class="page-header-image"></div>
-        <div class="content">
-          <br><br>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 col-md-6 offset-lg-0 offset-md-3">
-                <div id="square7" class="square square-7"></div>
-                <div id="square8" class="square square-8"></div>
-                <form name="myform" action="" method="POST">
-                  <h4 class="text-danger">{{msg}}</h4>
-                  {% csrf_token %}
-                <div class="card card-register" >
+<div class="register-page">
+  <div class="wrapper">
+    <div class="page-header">
+      <div class="page-header-image"></div>
+      <div class="content">
+        <br><br>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 offset-lg-0 offset-md-3">
+              <div id="square7" class="square square-7"></div>
+              <div id="square8" class="square square-8"></div>
+              <form name="myform" action="" method="POST">
+                <h4 class="text-danger">{{msg}}</h4>
+                {% csrf_token %}
+                <div class="card card-register">
                   <div class="card-header">
                     <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
                     <h4 class="card-title" style="color:#dadada">&nbsp;Forgot</h4>
                   </div>
                   <div class="card-body">
-                      <div id="userid" class="input-group">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="mrao-icons icon-single-02"></i>
-                          </div>
+                    <div id="userid" class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="mrao-icons icon-single-02"></i>
                         </div>
-                      <input type="email" class="form-control" name='email' id="email" placeholder="Enter your registered Email" required>
                       </div>
+                      <input type="email" class="form-control" name='email' id="email"
+                        placeholder="Enter your registered Email" required>
+                    </div>
                   </div>
                   <div class="card-footer">
-                    <button type="submit" name='forgot' onclick="" href="" class="btn btn-info btn-round btn-lg">Get Link</button>
+                    <button type="submit" name='forgot' onclick="" href="" class="btn btn-info btn-round btn-lg">Get
+                      Link</button>
                   </div>
                 </div>
               </form>
 
-              </div>
             </div>
-            <div class="register-bg"></div>
-            <div id="square1" class="square square-1"></div>
-            <div id="square2" class="square square-2"></div>
-            <div id="square3" class="square square-3"></div>
-            <div id="square4" class="square square-4"></div>
-            <div id="square5" class="square square-5"></div>
-            <div id="square6" class="square square-6"></div>
           </div>
+          <div class="register-bg"></div>
+          <div id="square1" class="square square-1"></div>
+          <div id="square2" class="square square-2"></div>
+          <div id="square3" class="square square-3"></div>
+          <div id="square4" class="square square-4"></div>
+          <div id="square5" class="square square-5"></div>
+          <div id="square6" class="square square-6"></div>
         </div>
       </div>
-      </div>
+    </div>
   </div>
+</div>
 
 {% endblock %}

@@ -7,7 +7,7 @@ ROBOTiX Club • SignUp
 
 {% block content %}
 <div class="register-page">
-<div class="wrapper">
+  <div class="wrapper">
     <div class="page-header">
       <div class="content">
         <div class="container">
@@ -15,59 +15,62 @@ ROBOTiX Club • SignUp
             <div class="col-lg-6 col-md-6">
               <div id="square7" class="square square-7"></div>
               <div id="square8" class="square square-8"></div>
-              <div class="card card-register" >
+              <div class="card card-register">
                 <form name="myform" action="" method="POST">
-                <div class="card-header">
-                  <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
-                  <h4 class="card-title" style="color:#dadada">&nbsp;SignUp</h4>
-                </div>
-                <div class="card-body">
-                  <form class="form" method='POST'>
-                    {% csrf_token %}
-                    <h4 class="text-danger" >{{msg}}</h4>
+                  <div class="card-header">
+                    <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
+                    <h4 class="card-title" style="color:#dadada">&nbsp;SignUp</h4>
+                  </div>
+                  <div class="card-body">
+                    <form class="form" method='POST'>
+                      {% csrf_token %}
+                      <h4 class="text-danger">{{msg}}</h4>
 
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="mrao-icons icon-email-85"></i>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="mrao-icons icon-email-85"></i>
+                          </div>
                         </div>
+                        <input type="email" placeholder="Email" class="form-control" name='email'
+                          pattern="[^ @]*@[^ @]*" required>
                       </div>
-                      <input type="email" placeholder="Email" class="form-control" name='email' pattern="[^ @]*@[^ @]*" required>
-                    </div>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="mrao-icons icon-single-02"></i>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="mrao-icons icon-single-02"></i>
+                          </div>
                         </div>
+                        <input type="text" class="form-control" placeholder="Full Name" name='name' required>
                       </div>
-                      <input type="text" class="form-control" placeholder="Full Name" name='name' required>
-                    </div>
 
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="mrao-icons icon-mobile"></i>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="mrao-icons icon-mobile"></i>
+                          </div>
                         </div>
+                        <input type="text" placeholder="Phone Number" class="form-control" name='phone_no'
+                          pattern="[0-9]{10}" required>
                       </div>
-                      <input type="text" placeholder="Phone Number" class="form-control" name='phone_no' pattern="[0-9]{10}" required>
-                    </div>
-                    <div class="form text-center">
-                      <label class="form-label">
-                        <span class="form-check-sign"></span>
-                        Password should contain atleast 8 characters and atleast a number.
-                      </label>
-                    </div>
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="mrao-icons icon-lock-circle"></i>
+                      <div class="form text-center">
+                        <label class="form-label">
+                          <span class="form-check-sign"></span>
+                          Password should contain atleast 8 characters and atleast a number.
+                        </label>
+                      </div>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="mrao-icons icon-lock-circle"></i>
+                          </div>
                         </div>
+                        <input type="password" id="txtPassword" class="form-control" name='password'
+                          placeholder="Password" required>
                       </div>
-                      <input type="password" id="txtPassword" class="form-control" name='password' placeholder="Password" required>
-                    </div>
 
 
-                  <!-- <div class="container" style="width:100%;pading:5px;">
+                      <!-- <div class="container" style="width:100%;pading:5px;">
                   <div class="progress-container">
                     <p class="progress-value" id="pass_strength" style="">  &nbsp;<span class="text-default" style="font-size:5;">&nbsp; The password should be strong to be valid</span></p>
                     <div class="progress">
@@ -77,7 +80,7 @@ ROBOTiX Club • SignUp
                   </div>
                   </div> -->
 
-                  <!-- <script>
+                      <!-- <script>
 
       function CheckStrength(password) {
           var password_strength = document.getElementById("password_strength");
@@ -150,87 +153,86 @@ ROBOTiX Club • SignUp
   </script> -->
 
 
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="mrao-icons icon-lock-circle"></i>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="mrao-icons icon-lock-circle"></i>
+                          </div>
                         </div>
+                        <input type="password" id="txtConfirmPassword" class="form-control" name='password1'
+                          placeholder="Confirm Password" required>
                       </div>
-                      <input type="password" id="txtConfirmPassword" class="form-control" name='password1' placeholder="Confirm Password" required>
-                    </div>
 
 
-                    <script type="text/javascript">
-                                  function Validate()
-                                  {
-                                    var password = document.getElementById("txtPassword").value;
-                                    var confirmPassword = document.getElementById("txtConfirmPassword").value;
-                                      if (password != confirmPassword)
-                                      {
-                                        alert("Password doesn't match");
-                                        return false;
-                                      }
-                                      return true;
-                                 }
-                    </script>
+                      <script type="text/javascript">
+                        function Validate() {
+                          var password = document.getElementById("txtPassword").value;
+                          var confirmPassword = document.getElementById("txtConfirmPassword").value;
+                          if (password != confirmPassword) {
+                            alert("Password doesn't match");
+                            return false;
+                          }
+                          return true;
+                        }
+                      </script>
 
 
-                    <div class="form-check text-left">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" onclick="showPass()">
-                        <span class="form-check-sign"></span>
-                        Show Password
-                      </label>
-                    </div>
+                      <div class="form-check text-left">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" onclick="showPass()">
+                          <span class="form-check-sign"></span>
+                          Show Password
+                        </label>
+                      </div>
 
-                    <script type="text/javascript">
-                                  function showPass()
-                                  {
-                                     var showp = document.getElementById("txtPassword");
-                                     var showcp = document.getElementById("txtConfirmPassword");
-                                       if (showp.type === "password")
-                                       {
-                                         showp.type = "text";
-                                         showcp.type = "text";
-                                       }
-                                       else
-                                       {
-                                         showp.type = "password";
-                                         showcp.type = "password";
-                                       }
-                                 }
-                    </script>
+                      <script type="text/javascript">
+                        function showPass() {
+                          var showp = document.getElementById("txtPassword");
+                          var showcp = document.getElementById("txtConfirmPassword");
+                          if (showp.type === "password") {
+                            showp.type = "text";
+                            showcp.type = "text";
+                          }
+                          else {
+                            showp.type = "password";
+                            showcp.type = "password";
+                          }
+                        }
+                      </script>
 
-                    <div class="form-check text-left text-info">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="chkbox" required>
-                        <span class="form-check-sign"></span>
-                        I agree to the
-                        <a href="{% static 'termsandconditions.txt' %}" class="text-info" id="checkbox">terms and conditions</a>
+                      <div class="form-check text-left text-info">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox" id="chkbox" required>
+                          <span class="form-check-sign"></span>
+                          I agree to the
+                          <a href="{% static 'termsandconditions.txt' %}" class="text-info" id="checkbox">terms and
+                            conditions</a>
 
-                      </label>
-                    </div>
-                </div>
-                <div class="card-footer text-center">
-                  <button type="submit" onclick="return Validate()" name='register' href="" class="btn btn-info btn-round btn-lg">Sign-Up</button>
-                  <a href="{% url 'users:account_login' %}" type="submit" onclick="" href="" class="btn btn-info btn-round btn-lg">LogIn Instead</a>
-                </div>
-               </form>
-             </div>
-           </div>
+                        </label>
+                      </div>
+                  </div>
+                  <div class="card-footer text-center">
+                    <button type="submit" onclick="return Validate()" name='register' href=""
+                      class="btn btn-info btn-round btn-lg">Sign-Up</button>
+                    <a href="{% url 'users:account_login' %}" type="submit" onclick="" href=""
+                      class="btn btn-info btn-round btn-lg">LogIn Instead</a>
+                  </div>
+                </form>
+              </div>
+            </div>
 
 
+          </div>
         </div>
-        </div>
-          <div id="square1" class="square square-1"></div>
-          <div id="square2" class="square square-2"></div>
-          <div id="square3" class="square square-3"></div>
-          <div id="square4" class="square square-4"></div>
-          <div id="square5" class="square square-5"></div>
-          <div id="square6" class="square square-6"></div>
-          <div class="register-bg"></div>
-        </div>
+        <div id="square1" class="square square-1"></div>
+        <div id="square2" class="square square-2"></div>
+        <div id="square3" class="square square-3"></div>
+        <div id="square4" class="square square-4"></div>
+        <div id="square5" class="square square-5"></div>
+        <div id="square6" class="square square-6"></div>
+        <div class="register-bg"></div>
       </div>
+    </div>
     <br>
   </div>
 </div>

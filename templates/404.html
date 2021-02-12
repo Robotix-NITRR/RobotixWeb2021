@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="apple-touch-icon" sizes="76x76" href='{% static "assets/img/apple-icon.png" %}'>
+  <link rel="apple-touch-icon" sizes="76x76" href='{% static "assets/img/apple-icon.png" %}'>
   <link rel="icon" type="image/png" href='{% static "assets/img/favicon.png" %}'>
   <title>
     Robotix Club • Page Not Found
@@ -14,25 +14,24 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
-	<link href='{% static "assets/css/nucleo-icons.css" %}' rel="stylesheet" />
+  <link href='{% static "assets/css/nucleo-icons.css" %}' rel="stylesheet" />
   <!-- CSS Files -->
-  <link href='{% static "assets/scss/mrao-design.scss" %}' rel="stylesheet"/>
+  <link href='{% static "assets/scss/mrao-design.scss" %}' rel="stylesheet" />
   <link href='{% static "assets/css/mrao-design-page.css" %}' rel="stylesheet" />
 </head>
 
 
 
 
-  <!--Clock Style-->
-  <style>
-  body
-  {
+<!--Clock Style-->
+<style>
+  body {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-   .clock
-  {
+
+  .clock {
     width: 350px;
     height: 350px;
     display: flex;
@@ -43,97 +42,100 @@
     border: 5px solid #171941;
     border-radius: 50%;
     box-shadow: #000000 4px 15px 15px,
-                inset #000000 4px 15px 15px,
-                rgba(255,255,255,0.1) -4px -15px 15px,
-                inset rgba(255,255,255,0.1) -4px -15px 15px;
+      inset #000000 4px 15px 15px,
+      rgba(255, 255, 255, 0.1) -4px -15px 15px,
+      inset rgba(255, 255, 255, 0.1) -4px -15px 15px;
   }
-  .clock:before
-  {
-   content: '';
-   position: absolute;
-   width: 15px;
-   height: 15px;
-   background: #ffffff;
-   border-radius: 50%;
-   z-index: 10000;
+
+  .clock:before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ffffff;
+    border-radius: 50%;
+    z-index: 10000;
   }
 
   .clock .hour,
   .clock .min,
-  .clock .sec
-  {
-   position: absolute;
+  .clock .sec {
+    position: absolute;
   }
-  .clock .hour, .hr
-  {
+
+  .clock .hour,
+  .hr {
     width: 160px;
     height: 160px;
   }
-  .clock .min, .mn
-  {
+
+  .clock .min,
+  .mn {
     width: 190px;
     height: 190px;
   }
-  .clock .sec, .sc
-  {
+
+  .clock .sec,
+  .sc {
     width: 230px;
     height: 230px;
   }
-  .hr, .mn, .sc
-  {
+
+  .hr,
+  .mn,
+  .sc {
     display: flex;
     justify-content: center;
     /* align-items: center; */
     position: absolute;
     border-radius: 50%;
   }
-  .hr:before
-  {
+
+  .hr:before {
     content: '';
     position: absolute;
     width: 8px;
     height: 80px;
     background: #0095ff;
     z-index: 10;
-    border-radius: 6px  6px 0 0;
+    border-radius: 6px 6px 0 0;
   }
-   .mn:before
-  {
+
+  .mn:before {
     content: '';
     position: absolute;
     width: 4px;
     height: 110px;
     background: #ef5050;
     z-index: 11;
-    border-radius: 6px  6px 0 0;
+    border-radius: 6px 6px 0 0;
   }
-  .sc:before
-  {
+
+  .sc:before {
     content: '';
     position: absolute;
     width: 2px;
     height: 150px;
     background: #ffffff;
     z-index: 12;
-    border-radius: 6px  6px 0 0;
+    border-radius: 6px 6px 0 0;
   }
-
 </style>
 <!--end of Clock Style-->
 
 
 
 
-<body class="profile-page" >
+<body class="profile-page">
 
   <!-- Navbar -->
-	<nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="20">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="20">
 
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href='{% url "index" %}' rel="tooltip" title="" data-placement="bottom">
           <img src='{% static "assets/img/RobotixLogo.png" %}' width="40" height="37">
-          <span>   ROBOTiX</span> Club
+          <span> ROBOTiX</span> Club
         </a>
         <!-- <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar bar1"></span>
@@ -226,80 +228,80 @@
   <!-- <img src="assets/img/dots.png" class="dots"> -->
 
   <section class="section section-lg">
-      <section class="container"><br><br>
-				<div class="row"  align="center">
-          <div class="col-lg-12 col-md-12">
-            <div class="clock">
-              <div class="hour">
-                <div class="hr" id="hr"></div>
-              </div>
-              <div class="min">
-                <div class="mn" id="mn"></div>
-              </div>
-              <div class="sec">
-                <div class="sc" id="sc"></div>
-              </div>
+    <section class="container"><br><br>
+      <div class="row" align="center">
+        <div class="col-lg-12 col-md-12">
+          <div class="clock">
+            <div class="hour">
+              <div class="hr" id="hr"></div>
+            </div>
+            <div class="min">
+              <div class="mn" id="mn"></div>
+            </div>
+            <div class="sec">
+              <div class="sc" id="sc"></div>
             </div>
           </div>
-          <div class="col-lg-12 col-md-12">
-            <br><br>
-            <br>
-            <h4 class="text-white text-center" style="z-index:100;">Don't waste your <b>TIME</b> here...</h4>
-            <h1 class="text-center" style="font-size: 98px;z-index:105"><b>404</b></h1>
-            <h2 class="text-center" style="z-index:102">This <b>PAGE</b> is <b>NOT AVAILABLE....</b></h2>
-          </div>
         </div>
+        <div class="col-lg-12 col-md-12">
+          <br><br>
+          <br>
+          <h4 class="text-white text-center" style="z-index:100;">Don't waste your <b>TIME</b> here...</h4>
+          <h1 class="text-center" style="font-size: 98px;z-index:105"><b>404</b></h1>
+          <h2 class="text-center" style="z-index:102">This <b>PAGE</b> is <b>NOT AVAILABLE....</b></h2>
+        </div>
+      </div>
 
 
 
-  <!-----------------------------Clock Script---------------------------------------->
-  <script>
+      <!-----------------------------Clock Script---------------------------------------->
+      <script>
 
-  const secDiv = document.getElementById('sc');
-  const minDiv = document.getElementById('mn');
-  const hourDiv = document.getElementById('hr');
+        const secDiv = document.getElementById('sc');
+        const minDiv = document.getElementById('mn');
+        const hourDiv = document.getElementById('hr');
 
-  setInterval(updateClock, 1000);
+        setInterval(updateClock, 1000);
 
-  function updateClock(){
-    let date = new Date();
-    let sec = date.getSeconds() / 60;
-    let min = date.getMinutes() / 60;
-    let hour = date.getHours() / 12;
+        function updateClock() {
+          let date = new Date();
+          let sec = date.getSeconds() / 60;
+          let min = date.getMinutes() / 60;
+          let hour = date.getHours() / 12;
 
-    secDiv.style.transform = "rotate(" + (sec * 360) + "deg)";
-    minDiv.style.transform = "rotate(" + (min * 360) + "deg)";
-    hourDiv.style.transform = "rotate(" + (hour * 360) + "deg)";
-  }
+          secDiv.style.transform = "rotate(" + (sec * 360) + "deg)";
+          minDiv.style.transform = "rotate(" + (min * 360) + "deg)";
+          hourDiv.style.transform = "rotate(" + (hour * 360) + "deg)";
+        }
 
-  </script>
-<!----------------Clock Script ends here---------------------------------->
+      </script>
+      <!----------------Clock Script ends here---------------------------------->
 
-      </section>
     </section>
+  </section>
 
 
 
-    <!-----------------------Footer------------------------------>
+  <!-----------------------Footer------------------------------>
 
 
 
- <a href="#" id="scrollup" class="scrollup btn-success"><i class="mrao-icons icon-minimal-up active"></i></a>
+  <a href="#" id="scrollup" class="scrollup btn-success"><i class="mrao-icons icon-minimal-up active"></i></a>
 
 
 
   <!--   Core JS Files   -->
-	<script src='{% static "assets/js/core/jquery.min.js" %}' type="text/javascript"></script>
-	<script src='{% static "assets/js/core/popper.min.js" %}' type="text/javascript"></script>
-	<script src='{% static "assets/js/core/bootstrap.min.js" %}' type="text/javascript"></script>
-	<script src='{% static "assets/js/plugins/perfect-scrollbar.jquery.min.js" %}'></script>
-	<script src='{% static "assets/js/plugins/bootstrap-switch.js" %}'></script>
-	<script src='{% static "assets/js/plugins/nouislider.min.js" %}' type="text/javascript"></script>
-	<!-- Chart JS -->
-	<script src='{% static "assets/js/plugins/chartjs.min.js" %}'></script>
-	<script src='{% static "assets/js/plugins/moment.min.js" %}'></script>
-	<script src='{% static "assets/js/plugins/bootstrap-datetimepicker.js" %}' type="text/javascript"></script>
-	<script src='{% static "assets/js/mrao-design.min.js" %}' type="text/javascript"></script>
+  <script src='{% static "assets/js/core/jquery.min.js" %}' type="text/javascript"></script>
+  <script src='{% static "assets/js/core/popper.min.js" %}' type="text/javascript"></script>
+  <script src='{% static "assets/js/core/bootstrap.min.js" %}' type="text/javascript"></script>
+  <script src='{% static "assets/js/plugins/perfect-scrollbar.jquery.min.js" %}'></script>
+  <script src='{% static "assets/js/plugins/bootstrap-switch.js" %}'></script>
+  <script src='{% static "assets/js/plugins/nouislider.min.js" %}' type="text/javascript"></script>
+  <!-- Chart JS -->
+  <script src='{% static "assets/js/plugins/chartjs.min.js" %}'></script>
+  <script src='{% static "assets/js/plugins/moment.min.js" %}'></script>
+  <script src='{% static "assets/js/plugins/bootstrap-datetimepicker.js" %}' type="text/javascript"></script>
+  <script src='{% static "assets/js/mrao-design.min.js" %}' type="text/javascript"></script>
 </body>
 
 </html>

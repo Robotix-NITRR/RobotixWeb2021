@@ -1,241 +1,328 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>ROBOTiX CLUB </title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="https://www.facebook.com/manoj.rao.2208" />
-<!-- css -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link rel="stylesheet" href='{% static "materialize/css/materialize.css" %}' media="screen,projection" />
-<link rel="stylesheet" href='{% static "css/materialize/materialize.min.css" %}' media="screen,projection" />
-<link href='{% static "css/bootstrap.min.css" %}' rel="stylesheet" />
-<link href='{% static "css/fancybox/jquery.fancybox.css" %}' rel="stylesheet">
-<link href='{% static "css/flexslider.css" %}' rel="stylesheet" />
-<link href='{% static "css/style.css" %}' rel="stylesheet" />
+	<meta charset="utf-8">
+	<title>ROBOTiX CLUB </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="" />
+	<meta name="author" content="https://www.facebook.com/manoj.rao.2208" />
+	<!-- css -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href='{% static "materialize/css/materialize.css" %}' media="screen,projection" />
+	<link rel="stylesheet" href='{% static "css/materialize/materialize.min.css" %}' media="screen,projection" />
+	<link href='{% static "css/bootstrap.min.css" %}' rel="stylesheet" />
+	<link href='{% static "css/fancybox/jquery.fancybox.css" %}' rel="stylesheet">
+	<link href='{% static "css/flexslider.css" %}' rel="stylesheet" />
+	<link href='{% static "css/style.css" %}' rel="stylesheet" />
 </head>
+
 <body>
 
-<div id="wrapper">
-	<!-- start header -->
-	<header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-               	<div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                  <a class="navbar-brand" href='{% url "index" %}'><img src='{% static "img/RobotixLogo.png" %}' width="40" height="37">  ROBOTiX</a>
-                </div>
-            </div>
-        </div>
-	</header>
-	<!-- end header -->
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row" style="text-align:center;">
-			<div class="col-lg-12"></div>
-		</div>
-	</div>
-	</section>
-	<h3 style="text-align:center;font-size:32px"><b>WEB TEAM - <span class="color">ROBOTiX CLUB</span></b></h3>
-	<section id="content">
-	<section class="section-padding">
-		<div class="container">
-			<div class="row showcase-section " style="text-align:center;">
-				<h3 style="font-size:28px"><b>Version -<span class="color"> 1.0.0</span></b></h3>
-				<br>
-				<br>
-				<div class="col-md-6">
-					<div class="team-member">
-										<!-- Image -->
-										<img class="img-responsive" src="" alt="">
-										<h4><b>Manoj Rao<!-- Name --></b></h4>
-										<span class="deg">Biotechnology<!-- Branch --></span>
-                    <span class="deg" style="color:#ffffff"><i class="fa fa-code custom" style=""></i> FrontEnd</span>
-                    <span class="color">
-										<a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark" href="https://www.linkedin.com/in/manoj-rao-a56868124/" target="_blank" title="LinkedIn">
-										         <span class="fa-stack">
-												       <i class="fa fa-square-o fa-stack-2x"></i>
-													     <i class="fa fa-linkedin fa-stack-1x"></i>
-											       </span><!--LinkedIn--></a>
-										<a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark" href="https://www.facebook.com/manoj.rao.2208" target="_blank" title="Facebook">
-			 										    <span class="fa-stack">
-			 												  <i class="fa fa-square-o fa-stack-2x"></i>
-			 													<i class="fa fa-facebook fa-stack-1x"></i>
-															</span><!--Facebook--></a>
-							      <a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark" href="mailto:raom7222@gmail.com" target="_blank" title="G-Mail">
-								 						  <span class="fa-stack">
-								 							   <i class="fa fa-square-o fa-stack-2x"></i>
-								 								 <i class="fa fa-envelope fa-stack-1x"></i>
-															</span><!--Facebook--></a>
-
-										</span>
-
+	<div id="wrapper">
+		<!-- start header -->
+		<header>
+			<div class="navbar navbar-default navbar-static-top">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse"
+							data-target=".navbar-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href='{% url "index" %}'><img src='{% static "img/RobotixLogo.png" %}'
+								width="40" height="37"> ROBOTiX</a>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="team-member">
-										<!-- Image -->
-										<img class="img-responsive" src="" alt="">
-										<h4><b>Ishneet Bhatia<!-- Name --></b></h4>
-										<span class="deg">Metallurgy and Materials<!-- Branch --></span>
-                    <span class="deg" style="color:#ffffff"><i class="fa fa-code custom" style=""></i> BackEnd</span>
-                    <span class="color">
-										<a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark" href="https://www.linkedin.com/in/ishneet-bhatia-b710b5190/" target="_blank" title="">
-										         <span class="fa-stack">
-												     <i class="fa fa-square-o fa-stack-2x"></i>
-													 <i class="fa fa-linkedin fa-stack-1x"></i>
-											     </span><!--LinkedIn--></a>
-													 <a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark" href="https://www.facebook.com/vinshubhatia.0503" target="_blank" title="Facebook">
-																		 <span class="fa-stack">
-																			 <i class="fa fa-square-o fa-stack-2x"></i>
-																			 <i class="fa fa-facebook fa-stack-1x"></i>
-																		 </span><!--Facebook--></a>
-													 <a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark" href="mailto:ishneetbhatia0503@gmail.com" target="_blank" title="G-Mail">
-																		 <span class="fa-stack">
-																				<i class="fa fa-square-o fa-stack-2x"></i>
-																				<i class="fa fa-envelope fa-stack-1x"></i>
-																		 </span><!--Facebook--></a>
+			</div>
+		</header>
+		<!-- end header -->
+		<section id="inner-headline">
+			<div class="container">
+				<div class="row" style="text-align:center;">
+					<div class="col-lg-12"></div>
+				</div>
+			</div>
+		</section>
+		<h3 style="text-align:center;font-size:32px"><b>WEB TEAM - <span class="color">ROBOTiX CLUB</span></b></h3>
+		<section id="content">
+			<section class="section-padding">
+				<div class="container">
+					<div class="row showcase-section " style="text-align:center;">
+						<h3 style="font-size:28px"><b>Version -<span class="color"> 1.0.0</span></b></h3>
+						<br>
+						<br>
+						<div class="col-md-6">
+							<div class="team-member">
+								<!-- Image -->
+								<img class="img-responsive" src="" alt="">
+								<h4><b>Manoj Rao
+										<!-- Name -->
+									</b></h4>
+								<span class="deg">Biotechnology
+									<!-- Branch -->
+								</span>
+								<span class="deg" style="color:#ffffff"><i class="fa fa-code custom" style=""></i>
+									FrontEnd</span>
+								<span class="color">
+									<a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark"
+										href="https://www.linkedin.com/in/manoj-rao-a56868124/" target="_blank"
+										title="LinkedIn">
+										<span class="fa-stack">
+											<i class="fa fa-square-o fa-stack-2x"></i>
+											<i class="fa fa-linkedin fa-stack-1x"></i>
 										</span>
+										<!--LinkedIn-->
+									</a>
+									<a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark"
+										href="https://www.facebook.com/manoj.rao.2208" target="_blank" title="Facebook">
+										<span class="fa-stack">
+											<i class="fa fa-square-o fa-stack-2x"></i>
+											<i class="fa fa-facebook fa-stack-1x"></i>
+										</span>
+										<!--Facebook-->
+									</a>
+									<a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark"
+										href="mailto:raom7222@gmail.com" target="_blank" title="G-Mail">
+										<span class="fa-stack">
+											<i class="fa fa-square-o fa-stack-2x"></i>
+											<i class="fa fa-envelope fa-stack-1x"></i>
+										</span>
+										<!--Facebook-->
+									</a>
+
+								</span>
+
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="team-member">
+								<!-- Image -->
+								<img class="img-responsive" src="" alt="">
+								<h4><b>Ishneet Bhatia
+										<!-- Name -->
+									</b></h4>
+								<span class="deg">Metallurgy and Materials
+									<!-- Branch -->
+								</span>
+								<span class="deg" style="color:#ffffff"><i class="fa fa-code custom" style=""></i>
+									BackEnd</span>
+								<span class="color">
+									<a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark"
+										href="https://www.linkedin.com/in/ishneet-bhatia-b710b5190/" target="_blank"
+										title="">
+										<span class="fa-stack">
+											<i class="fa fa-square-o fa-stack-2x"></i>
+											<i class="fa fa-linkedin fa-stack-1x"></i>
+										</span>
+										<!--LinkedIn-->
+									</a>
+									<a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark"
+										href="https://www.facebook.com/vinshubhatia.0503" target="_blank"
+										title="Facebook">
+										<span class="fa-stack">
+											<i class="fa fa-square-o fa-stack-2x"></i>
+											<i class="fa fa-facebook fa-stack-1x"></i>
+										</span>
+										<!--Facebook-->
+									</a>
+									<a style="color:inherit;text-decoration:none;" class="waves-effect waves-dark"
+										href="mailto:ishneetbhatia0503@gmail.com" target="_blank" title="G-Mail">
+										<span class="fa-stack">
+											<i class="fa fa-square-o fa-stack-2x"></i>
+											<i class="fa fa-envelope fa-stack-1x"></i>
+										</span>
+										<!--Facebook-->
+									</a>
+								</span>
+							</div>
+						</div>
+
+					</div>
+					<br>
+
+				</div>
+			</section>
+			<br><br>
+			<br /><br />
+		</section>
+
+		<!--_________________________________________________________Footer________________________________________________________-->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-3">
+						<div class="widget">
+							<h5 class="widgetheading" style="color:#ffffff;">Our Contact</h5>
+							<address>
+								<strong><a href='{% url "index" %}'>ROBOTiX CLUB - NIT Raipur</a></strong><br>
+								Great Eastern Rd, Amanaka, Raipur<br>
+								Chhattisgarh - 492010, India.
+							</address>
+							<p>
+							<ul class="link-list">
+								<li><a class="waves-effect waves-dark" href="tel:+918442001772" target="_blank"
+										title="Bharat Dhadich">Bharat - +91-8442001772</a><br><a
+										class="waves-effect waves-dark" href="tel:+919893902401" target="_blank"
+										title="Suhas">Suhas - +91-9893902401</a></li>
+								<li><a class="waves-effect waves-dark" href="mailto:nitrrobots16@gmail.com"
+										target="_blank">nitrrobots16@gmail.com</a></li>
+								</p>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="widget">
+							<h5 class="widgetheading" style="color:#ffffff;">Quick Links</h5>
+							<ul class="link-list">
+								<li><a class="waves-effect waves-dark" href='{% url "index" %}'>Home</a></li>
+								<li><a class="waves-effect waves-dark" href='{% url "about" %}'>About Us</a></li>
+								<li><a class="waves-effect waves-dark" href='{% url "about" %}'>Our Team</a></li>
+								<li><a class="waves-effect waves-dark" href="{% url 'contact' %}">Contact us</a></li>
+								<li><a class="waves-effect waves-dark" href="http://www.nitrr.ac.in/"
+										target="_blank">NIT Raipur</a></li>
+								<li><a class="waves-effect waves-dark"
+										href="https://www.google.com/maps/place/National+Institute+of+Technology,+Raipur/@21.2497222,81.6028404,17z/data=!3m1!4b1!4m5!3m4!1s0x3a28dde213f66723:0x21543965c50c43c7!8m2!3d21.2497222!4d81.6050291"
+										target="_blank">Location</a></li>
+
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="widget">
+							<h5 class="widgetheading" style="color:#ffffff;">Useful Links</h5>
+							<ul class="link-list">
+								<li>
+									<p><strong>NIT Raipur</strong> - <a class="waves-effect waves-dark"
+											href="http://www.nitrr.ac.in" target="_blank">http://www.nitrr.ac.in</a></p>
+								</li>
+								<li>
+									<p><strong>CDC - NIT Raipur</strong> - <a class="waves-effect waves-dark"
+											href="http://cdc.nitrr.ac.in" target="_blank">http://cdc.nitrr.ac.in/</a>
+									</p>
+								</li>
+								<li>
+									<p><strong>ROBOTiX CLUB 2019 Brochure</strong> - <a class="waves-effect waves-dark"
+											href="{% static '../media/docs/brochure.pdf' %}"
+											title="ROBOTiX CLUB Brochure" download>here</a></p>
+								</li>
+								<li>
+									<p><strong>ROBOTiX CLUB</strong> - <a class="waves-effect waves-dark"
+											href="https://forms.gle/tM1iYQFFwoKQra7D8"
+											title="Registration Here">Register here</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="widget">
+							<h5 class="widgetheading" style="color:#ffffff;">Social Platforms</h5>
+							<ul class="link-list">
+								<li>
+									<p><strong>Instagram </strong><a class="waves-effect waves-dark"
+											href="https://www.instagram.com/robotix_nitrr"
+											target="_blank">https://www.instagram.com/robotix_nitrr</a></p>
+								</li>
+								<li>
+									<p><strong>Facebook </strong><a class="waves-effect waves-dark"
+											href="https://www.facebook.com/nitrrobots16"
+											target="_blank">https://www.facebook.com/nitrrobots16</a></p>
+								</li>
+								<li>
+									<p><strong>Twitter <br></strong><a class="waves-effect waves-dark" href=""
+											target="_blank">https://www.twitter.com/</a></p>
+								</li>
+								<li>
+									<p><a class="waves-effect waves-dark" href="#"></a></p>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-
 			</div>
-			<br>
-
-		</div>
-	</section>
-	<br><br>
-	<br/><br/>
-	</section>
-
-<!--_________________________________________________________Footer________________________________________________________-->
-<footer>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-3">
-			<div class="widget">
-				<h5 class="widgetheading" style="color:#ffffff;">Our Contact</h5>
-				<address>
-				<strong><a href='{% url "index" %}'>ROBOTiX CLUB - NIT Raipur</a></strong><br>
-				Great Eastern Rd, Amanaka, Raipur<br>
-				 Chhattisgarh - 492010, India.</address>
-				<p>
-					<ul class="link-list">
-					<li><a class="waves-effect waves-dark" href="tel:+918442001772" target="_blank" title="Bharat Dhadich">Bharat - +91-8442001772</a><br><a class="waves-effect waves-dark" href="tel:+919893902401" target="_blank" title="Suhas">Suhas - +91-9893902401</a></li>
-					<li><a class="waves-effect waves-dark" href="mailto:nitrrobots16@gmail.com" target="_blank">nitrrobots16@gmail.com</a></li>
-				</p>
+			<div id="sub-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3">
+							<div class="copyright">
+								<p style="font-size:11px">
+									<span>&copy; 2019 All Rights Reserved. </span> <span class="color"><a
+											href="{% url 'webteam' %}">WEB TEAM ROBOTiX</a></span>
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="copyright">
+								<p style="font-size:11px">
+									<span><i class="fa fa-code custom" style="font-size:14px"></i></span>
+									<span class="color"><a href="https://www.linkedin.com/in/manoj-rao-a56868124/"
+											target="_blank">Manoj Rao</a>,
+										<a href="https://www.linkedin.com/in/ishneet-bhatia-b710b5190/"
+											target="_blank">Ishneet Bhatia </a>&amp;
+										<a href="https://www.linkedin.com/in/nihal-dewangan-77a8aa16a"
+											target="_blank">Nihal Dewangan</a>
+									</span>
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<div class="copyright">
+								<p style="font-size:11px">
+									<span><i class="fa fa-globe" style="font-size:14px"></i></span><span
+										class="color"><a href="{% url 'webteam' %}"> Version 1.0.0</a></span>
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-4" style="font-size:11px">
+							<ul class="social-network">
+								<li><a class="waves-effect waves-dark" href="https://www.facebook.com/nitrrobots16/"
+										data-placement="top" target="_blank" title="Facebook"><i
+											class="fa fa-facebook"></i></a></li>
+								<li><a class="waves-effect waves-dark" href="https://www.instagram.com/robotix_nitrr"
+										data-placement="top" target="_blank" title="Instagram"><i
+											class="fa fa-instagram"></i></a></li>
+								<li><a class="waves-effect waves-dark" href="" data-placement="top" title="Twitter"
+										target="_blank"><i class="fa fa-twitter"></i></a></li>
+								<li><a class="waves-effect waves-dark"
+										href="https://in.linkedin.com/company/robotix-club-nit-raipur"
+										data-placement="top" target="_blank" title="Linkedin"><i
+											class="fa fa-linkedin"></i></a></li>
+								<li><a class="waves-effect waves-dark" href="mailto:nitrrobots16@gmail.com"
+										data-placement="top" target="_blank" title="Gmail"><i
+											class="fa fa-envelope"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="widget">
-				<h5 class="widgetheading" style="color:#ffffff;">Quick Links</h5>
-				<ul class="link-list">
-					<li><a class="waves-effect waves-dark" href='{% url "index" %}' >Home</a></li>
-					<li><a class="waves-effect waves-dark" href='{% url "about" %}' >About Us</a></li>
-					<li><a class="waves-effect waves-dark" href='{% url "about" %}' >Our Team</a></li>
-					<li><a class="waves-effect waves-dark" href="{% url 'contact' %}">Contact us</a></li>
-					<li><a class="waves-effect waves-dark" href="http://www.nitrr.ac.in/" target="_blank">NIT Raipur</a></li>
-					<li><a class="waves-effect waves-dark" href="https://www.google.com/maps/place/National+Institute+of+Technology,+Raipur/@21.2497222,81.6028404,17z/data=!3m1!4b1!4m5!3m4!1s0x3a28dde213f66723:0x21543965c50c43c7!8m2!3d21.2497222!4d81.6050291" target="_blank">Location</a></li>
-
-				</ul>
-			</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="widget">
-				<h5 class="widgetheading" style="color:#ffffff;">Useful Links</h5>
-				<ul class="link-list">
-					<li><p><strong>NIT Raipur</strong> - <a class="waves-effect waves-dark" href="http://www.nitrr.ac.in" target="_blank">http://www.nitrr.ac.in</a></p></li>
-					<li><p><strong>CDC - NIT Raipur</strong> - <a class="waves-effect waves-dark" href="http://cdc.nitrr.ac.in" target="_blank">http://cdc.nitrr.ac.in/</a></p></li>
-					<li><p><strong>ROBOTiX CLUB 2019 Brochure</strong> - <a class="waves-effect waves-dark" href="{% static '../media/docs/brochure.pdf' %}" title="ROBOTiX CLUB Brochure" download>here</a></p></li>
-					<li><p><strong>ROBOTiX CLUB</strong> - <a class="waves-effect waves-dark" href="https://forms.gle/tM1iYQFFwoKQra7D8" title="Registration Here">Register here</a></li>
-				</ul>
-			</div>
-		</div>
-		<div class="col-sm-3">
-				<div class="widget">
-				<h5 class="widgetheading" style="color:#ffffff;">Social Platforms</h5>
-				<ul class="link-list">
-					<li><p><strong>Instagram </strong><a class="waves-effect waves-dark" href="https://www.instagram.com/robotix_nitrr" target="_blank">https://www.instagram.com/robotix_nitrr</a></p></li>
-					<li><p><strong>Facebook </strong><a class="waves-effect waves-dark" href="https://www.facebook.com/nitrrobots16" target="_blank">https://www.facebook.com/nitrrobots16</a></p></li>
-					<li><p><strong>Twitter <br></strong><a class="waves-effect waves-dark" href="" target="_blank">https://www.twitter.com/</a></p></li>
-					<li><p><a class="waves-effect waves-dark" href="#"></a></p></li>
-				</ul>
-			</div>
-		</div>
+		</footer>
 	</div>
-</div>
-<div id="sub-footer">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3">
-				<div class="copyright">
-					<p  style="font-size:11px">
-						<span>&copy; 2019 All Rights Reserved. </span> <span class="color"><a href="{% url 'webteam' %}">WEB TEAM ROBOTiX</a></span>
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3">
-				<div class="copyright">
-					<p  style="font-size:11px">
-						<span><i class="fa fa-code custom" style="font-size:14px"></i></span>
-						<span class="color"><a href="https://www.linkedin.com/in/manoj-rao-a56868124/" target="_blank">Manoj Rao</a>,
-																<a href="https://www.linkedin.com/in/ishneet-bhatia-b710b5190/" target="_blank">Ishneet Bhatia </a>&amp;
-																<a href="https://www.linkedin.com/in/nihal-dewangan-77a8aa16a" target="_blank">Nihal Dewangan</a>
-						</span>
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-2">
-				<div class="copyright">
-					<p  style="font-size:11px">
-						<span><i class="fa fa-globe" style="font-size:14px"></i></span><span class="color"><a href="{% url 'webteam' %}">   Version 1.0.0</a></span>
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-4"  style="font-size:11px">
-				<ul class="social-network">
-					<li><a class="waves-effect waves-dark" href="https://www.facebook.com/nitrrobots16/" data-placement="top" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-					<li><a class="waves-effect waves-dark" href="https://www.instagram.com/robotix_nitrr" data-placement="top" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-					<li><a class="waves-effect waves-dark" href="" data-placement="top" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
-					<li><a class="waves-effect waves-dark" href="https://in.linkedin.com/company/robotix-club-nit-raipur" data-placement="top" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-					<li><a class="waves-effect waves-dark" href="mailto:nitrrobots16@gmail.com" data-placement="top" target="_blank" title="Gmail"><i class="fa fa-envelope"></i></a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
-</footer>
-</div>
-<a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up active"></i></a>
+	<a href="#" class="scrollup waves-effect waves-dark"><i class="fa fa-angle-up active"></i></a>
 
 
-<!-- javascript
+	<!-- javascript
   ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src='{% static "js/jquery.js" %}'></script>
-<script src='{% static "js/jquery.easing.1.3.js" %}'></script>
-<script src='{% static "materialize/js/materialize.js" %}'></script>
-<script src='{% static "js/jquery.fancybox.pack.js" %}'></script>
-<script src='{% static "js/jquery.fancybox-media.js" %}'></script>
-<script src='{% static "js/jquery.flexslider.js" %}'></script>
-<script src='{% static "js/animate.js" %}'></script>
-<script src='{% static "js/bootstrap.min.js" %}'></script>
-<script src='{% static "js/jquery.mousewheel.js" %}'></script>
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src='{% static "js/jquery.js" %}'></script>
+	<script src='{% static "js/jquery.easing.1.3.js" %}'></script>
+	<script src='{% static "materialize/js/materialize.js" %}'></script>
+	<script src='{% static "js/jquery.fancybox.pack.js" %}'></script>
+	<script src='{% static "js/jquery.fancybox-media.js" %}'></script>
+	<script src='{% static "js/jquery.flexslider.js" %}'></script>
+	<script src='{% static "js/animate.js" %}'></script>
+	<script src='{% static "js/bootstrap.min.js" %}'></script>
+	<script src='{% static "js/jquery.mousewheel.js" %}'></script>
 
-<!-- Vendor Scripts -->
-<script src='{% static "js/modernizr.custom.js" %}'></script>
-<script src='{% static "js/jquery.isotope.min.js" %}'></script>
-<script src='{% static "js/jquery.magnific-popup.min.js" %}'></script>
-<script src='{% static "js/animate.js" %}'></script>
-<script src='{% static "js/custom.js" %}'></script>
-<script src='{% static "js/flexslider/jquery.flexslider.js" %}'></script>
+	<!-- Vendor Scripts -->
+	<script src='{% static "js/modernizr.custom.js" %}'></script>
+	<script src='{% static "js/jquery.isotope.min.js" %}'></script>
+	<script src='{% static "js/jquery.magnific-popup.min.js" %}'></script>
+	<script src='{% static "js/animate.js" %}'></script>
+	<script src='{% static "js/custom.js" %}'></script>
+	<script src='{% static "js/flexslider/jquery.flexslider.js" %}'></script>
 
 
 </body>
+
 </html>

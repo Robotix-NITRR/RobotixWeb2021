@@ -8,113 +8,115 @@ Robotix Club • RoboExpo
 {% block content %}
 <img src='{% static "assets/img/dots.png" %}' class="dots">
 <img src='{% static "assets/img/path4.png" %}' class="path">
-  <!-- End Navbar -->
-  <section class="section section-lg">
-      <section class="container">
-  <div class="wrapper">
-    <div class="page-header">
-      <div class="content">
-        <ul class="nav nav-tabs nav-tabs-info justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#create">
-              Create Team
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#join">
-              Join Team
-            </a>
-          </li>
-        </ul>
-        <div class="container">
-          <br>
-          <div class="tab-content tab-subcategories">
-            <div class="tab-pane active" id="create">
-          <div class="row">
-            <div class="col-sm-12 col-md-12">
-              <div id="square7" class="square square-7"></div>
-              <div id="square8" class="square square-8"></div>
-              <div class="card card-register" >
-                <form name="myform" action="" method="POST">
-                <div class="card-header">
-                  <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
-                  <h4 class="card-title" style="color:#dadada">&nbsp;Create Team</h4>
-                </div>
-                <div class="card-body">
-                  <form class="form" method="POST">
-                    {% csrf_token %}
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="mrao-icons icon-single-02"></i>
+<!-- End Navbar -->
+<section class="section section-lg">
+  <section class="container">
+    <div class="wrapper">
+      <div class="page-header">
+        <div class="content">
+          <ul class="nav nav-tabs nav-tabs-info justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#create">
+                Create Team
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#join">
+                Join Team
+              </a>
+            </li>
+          </ul>
+          <div class="container">
+            <br>
+            <div class="tab-content tab-subcategories">
+              <div class="tab-pane active" id="create">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                    <div id="square7" class="square square-7"></div>
+                    <div id="square8" class="square square-8"></div>
+                    <div class="card card-register">
+                      <form name="myform" action="" method="POST">
+                        <div class="card-header">
+                          <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
+                          <h4 class="card-title" style="color:#dadada">&nbsp;Create Team</h4>
                         </div>
-                      </div>
-                      <input type="text" name='teamName' class="form-control" placeholder="Team Name" required>
-                    </div>
+                        <div class="card-body">
+                          <form class="form" method="POST">
+                            {% csrf_token %}
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                  <i class="mrao-icons icon-single-02"></i>
+                                </div>
+                              </div>
+                              <input type="text" name='teamName' class="form-control" placeholder="Team Name" required>
+                            </div>
 
-                    <div class="form-check text-left text-info">
-                      <label class="form-check-label">
-                        <input class="form-check-input" type="checkbox" id="chkbox" required>
-                        <span class="form-check-sign"></span>
-                        I state that as a leader of my team I will be responsible for my Team's actions.
-                      </label>
+                            <div class="form-check text-left text-info">
+                              <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" id="chkbox" required>
+                                <span class="form-check-sign"></span>
+                                I state that as a leader of my team I will be responsible for my Team's actions.
+                              </label>
+                            </div>
+                        </div>
+                        <div class="card-footer text-center">
+                          <button type="submit" onclick="" href="" name='create'
+                            class="btn btn-info btn-round btn-lg">Create</button>
+                        </div>
+                      </form>
                     </div>
+                  </div>
                 </div>
-                <div class="card-footer text-center">
-                  <button type="submit" onclick="" href="" name='create' class="btn btn-info btn-round btn-lg">Create</button>
-                </div>
-               </form>
-             </div>
-           </div>
-       </div>
-       </div>
+              </div>
 
-      <div class="tab-pane" id="join">
-       <div class="row">
-             <div class="col-sm-12 col-md-12">
-               <div id="square7" class="square square-7"></div>
-               <div id="square8" class="square square-8"></div>
-               <div class="card card-register" >
-                 <form name="myform" action="" method="POST">
-                   <!-- {% if message %}
+              <div class="tab-pane" id="join">
+                <div class="row">
+                  <div class="col-sm-12 col-md-12">
+                    <div id="square7" class="square square-7"></div>
+                    <div id="square8" class="square square-8"></div>
+                    <div class="card card-register">
+                      <form name="myform" action="" method="POST">
+                        <!-- {% if message %}
                    <h4 class="text-danger">{{message}}</h4>
                    {% endif %} -->
-                   {% csrf_token %}
-                 <div class="card-header">
-                   <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
-                   <h4 class="card-title" style="color:#dadada">&nbsp;Join Team</h4>
-                 </div>
-                 <div class="card-body">
-                   <!-- {% if message %}
+                        {% csrf_token %}
+                        <div class="card-header">
+                          <img class="card-img" src='{% static "assets/img/square1.png" %}' alt="Card image">
+                          <h4 class="card-title" style="color:#dadada">&nbsp;Join Team</h4>
+                        </div>
+                        <div class="card-body">
+                          <!-- {% if message %}
                    <h4 class="text-danger">{{message}}</h4>
                    {% endif %} -->
-                     <div class="input-group">
-                       <div class="input-group-prepend">
-                         <div class="input-group-text">
-                           <i class="mrao-icons icon-single-02"></i>
-                         </div>
-                       </div>
-                       <input type="text" name='token' class="form-control" placeholder="Team Code" required>
-                     </div>
-                     <div class="form-check text-left text-info">
-                       <label class="form-check-label">
-                         <input class="form-check-input" type="checkbox" id="chkbox" required>
-                         <span class="form-check-sign"></span>
-                         I state that I am joining this team at my own will.
-                       </label>
-                     </div>
-                 </div>
-                 <div class="card-footer text-center">
-                   <button type="submit" onclick="" href="" name='join' class="btn btn-info btn-round btn-lg">Join</button>
-                 </div>
-                </form>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="mrao-icons icon-single-02"></i>
+                              </div>
+                            </div>
+                            <input type="text" name='token' class="form-control" placeholder="Team Code" required>
+                          </div>
+                          <div class="form-check text-left text-info">
+                            <label class="form-check-label">
+                              <input class="form-check-input" type="checkbox" id="chkbox" required>
+                              <span class="form-check-sign"></span>
+                              I state that I am joining this team at my own will.
+                            </label>
+                          </div>
+                        </div>
+                        <div class="card-footer text-center">
+                          <button type="submit" onclick="" href="" name='join'
+                            class="btn btn-info btn-round btn-lg">Join</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>
-
-        </div>
-        </div>
-        </div>
-        </div>
+          </div>
           <div id="square1" class="square square-1"></div>
           <div id="square2" class="square square-2"></div>
           <div id="square3" class="square square-3"></div>
@@ -123,9 +125,9 @@ Robotix Club • RoboExpo
           <div id="square6" class="square square-6"></div>
         </div>
       </div>
-    <br>
+      <br>
     </div>
-    </section>
-    </section>
-    <br>
-  {% endblock %}
+  </section>
+</section>
+<br>
+{% endblock %}

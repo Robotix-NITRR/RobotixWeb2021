@@ -6,41 +6,43 @@ Robotix Club • Robothon Problem Statements
 {% endblock %}
 
 {% block content %}
-    <img src='{% static "assets/img/dots.png" %}' class="dots">
-    <img src='{% static "assets/img/path4.png" %}' class="path">
-    <section class="section section-lg">
-      <section class="container"><br><br>
-         <div class="row"><br>
-            <div class="page-head-title">
-                <h5 class="page-title-sim">ROBOTHON</h5>
-              </div><br>
+<img src='{% static "assets/img/dots.png" %}' class="dots">
+<img src='{% static "assets/img/path4.png" %}' class="path">
+<section class="section section-lg">
+  <section class="container"><br><br>
+    <div class="row"><br>
+      <div class="page-head-title">
+        <h5 class="page-title-sim">ROBOTHON</h5>
+      </div><br>
 
-              <div class="col-lg-12 col-md-12"><br>
+      <div class="col-lg-12 col-md-12"><br>
 
-            <ol><h1 class="text-info" align="center"><strong>Problem Statements</strong></h1>
+        <ol>
+          <h1 class="text-info" align="center"><strong>Problem Statements</strong></h1>
 
-              <!-- Loop yahan start krna -->
-              {% for item in all_abstract %}
-              <li class="text-info h2">
-                <h2 class="text-info"><strong>{{ item.title }}</strong></h2>
-                <p class="text-white h4">
-                  {{ item.description }}</p>
-                  <p class="text-info h4">Domains : {{ item.domain }}</p>
-                  <p class="text-info h4">Requirements : {{ item.requirements }}</p><br>
-              </li>
-              <!-- Loop yahan khatam krna -->
-              {% endfor %}
-            </ol>
+          <!-- Loop yahan start krna -->
+          {% for item in all_abstract %}
+          <li class="text-info h2">
+            <h2 class="text-info"><strong>{{ item.title }}</strong></h2>
+            <p class="text-white h4">
+              {{ item.description }}</p>
+            <p class="text-info h4">Domains : {{ item.domain }}</p>
+            <p class="text-info h4">Requirements : {{ item.requirements }}</p><br>
+          </li>
+          <!-- Loop yahan khatam krna -->
+          {% endfor %}
+        </ol>
 
-                  <div align="center">
-                     <a type="button" href='{% static "file/Problem Statements.pdf" %}' class="btn btn-info btn-round btn-lg" download>Download PDF</a>
-                  </div>
-                     <br><br>
-
-       </div>
-
+        <div align="center">
+          <a type="button" href='{% static "file/Problem Statements.pdf" %}' class="btn btn-info btn-round btn-lg"
+            download>Download PDF</a>
         </div>
-      </section>
-    </section>
+        <br><br>
+
+      </div>
+
+    </div>
+  </section>
+</section>
 
 {% endblock %}

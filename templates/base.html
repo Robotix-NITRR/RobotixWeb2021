@@ -21,7 +21,13 @@
   <link href='{% static "assets/scss/mrao-design.scss" %}' rel="stylesheet"/>
   <link href='{% static "assets/css/mrao-design-page.css" %}' rel="stylesheet" />
 
-  <link rel="stylesheet" href="{% static 'css/certificate/style_certificate.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'css/certificate/style_certificate.css' %}"> -->
+
+
+  {% block cssfile %}
+  <!-- css link goes here -->
+  {% endblock %}
+
 
 </head>
 
@@ -240,6 +246,7 @@
 
 
 <a href="#" id="scrollup" class="scrollup btn-info"><i class="mrao-icons icon-minimal-up active"></i></a>
+
 <script>
 
 </script>

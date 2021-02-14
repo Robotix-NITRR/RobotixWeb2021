@@ -6,9 +6,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h5au0+ubk)_fy#y)xw(-kotofkgj^&ca9fb9ovkm=z1+8ez2zv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = ['127.0.0.1']
+#ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
 
@@ -158,11 +159,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/'),
-    ]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 AUTH_USER_MODEL = 'users.UserProfile'
 
 

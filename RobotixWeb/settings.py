@@ -6,9 +6,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h5au0+ubk)_fy#y)xw(-kotofkgj^&ca9fb9ovkm=z1+8ez2zv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = True
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = ['127.0.0.1']
+
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['robotix.nitrr.ac.in','192.46.213.171']
 
 # Application definition
 
@@ -62,10 +66,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 REST_AUTH_SERIALIZERS = {
     "USER_DETAILS_SERIALIZER": "users.serializers.UserDetailsSerializer",
-}
-REST_AUTH_REGISTER_SERIALIZERS = {
-    "REGISTER_SERIALIZER": "users.serializers.UserProfileSerializer",
-}
+}#DEBUG = TrueUserProfileSerializer",
+
 
 ACCOUNT_ADAPTER = 'users.adapter.CustomAccountAdapter'
 
@@ -158,11 +160,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
 STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/'),
-    ]
+
+if DEBUG:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),]
+else :
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 AUTH_USER_MODEL = 'users.UserProfile'
 
 
@@ -172,7 +180,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'robotixclub@nitrr.ac.in'
+
+if DEBUG:
+    EMAIL_HOST_USER = 'wandavision5432@gmail.com'
+else :
+    EMAIL_HOST_USER = 'robotixclub@nitrr.ac.in'
+
 EMAIL_HOST_PASSWORD = 'Nitrrobots16'
 
 # EMAIL_HOST = 'localhost'

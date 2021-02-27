@@ -1,29 +1,22 @@
+#models
 from django.db import models
 import uuid
-from django.urls import reverse
-from rest_framework import serializers
-from django.dispatch import receiver
-from django.db.models.signals import post_save
-import urllib.request
 from django.core.files import File
-from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.db.models.signals import post_save,post_delete
-from django.core.mail import EmailMultiAlternatives
-
-import io
-import os
 from events.models import Event
-from .utill import imagedraw
-
-from PIL import Image
-import requests
-from io import BytesIO
-
+#signals
+from django.dispatch import receiver
+from django.db.models.signals import post_save,post_delete
+#emalis
+from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
+#PIL
+from PIL import Image, ImageDraw
+#utill
 import requests
 import tempfile
 from django.core import files
-import PIL
-from PIL import Image, ImageDraw
+import os
+
 
 # Create your models here.
 class Certificate(models.Model):
@@ -41,7 +34,7 @@ class Certificate(models.Model):
 @receiver(post_save,sender=Certificate)
 def img_handler(created,instance,*args,**kwargs):
     if created:
-        image_url = "http://127.0.0.1:8000/static/img/cert.jpg"
+        image_url = "https://robotix.nitrr.ac.in/static/img/cert.jpg"
         #font_url = "http://127.0.0.1:8000/static/font/Raleway-Regular.ttf"
         response = requests.get(image_url, stream=True)
         if response.status_code != requests.codes.ok:
@@ -79,7 +72,7 @@ def img_handler(created,instance,*args,**kwargs):
             msg = EmailMultiAlternatives(
                 'Get your certificate',               # subject,
                 'Download this certificate here!',      # text_content,
-                'robotixclub@nitrr.ac.in',                # from_email,
+                '{}'.format(settings.EMAIL_HOST_USER),                # from_email,
                 ['{}'.format(instance.email),],             # to email(s)
             )
             msg.attach_alternative(html_content, "text/html")

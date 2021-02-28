@@ -1,5 +1,5 @@
 from django.urls import re_path,include, path
-from .views import Search
+from .views import *
 
 app_name = 'certificate'
 
@@ -8,4 +8,6 @@ urlpatterns = [
     path('<uuid:url_key>/', Search, name='search'),
     # path('', enter_id, name='enter_id'),
     path('', Search, name='enter_id'),
+    path('mail/',send_mails,name='Mail'),
+    path('image/',create_image,name='image')
 ]

@@ -7,7 +7,7 @@ SECRET_KEY = 'h5au0+ubk)_fy#y)xw(-kotofkgj^&ca9fb9ovkm=z1+8ez2zv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+    'django_crontab',
 
     #social login
     'allauth.socialaccount',
@@ -192,3 +193,9 @@ EMAIL_HOST_PASSWORD = 'Nitrrobots16'
 # EMAIL_PORT = 1025
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 LOGOUT_REDIRECT_URL = '/'
+
+#crontab
+CRONJOBS = [
+    ('*/1 * * * *', 'certificate.cron.email_job'),
+    ('*/1 * * * *', 'certificate.cron.cert_job')
+]

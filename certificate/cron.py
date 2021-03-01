@@ -3,18 +3,24 @@ from .models import Certificate
 from django.core.mail import send_mail
 from django.conf import settings
 #PIL
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw,ImageFont
 #utill
 import requests
 import tempfile
 from django.core import files
 import os
+from io import BytesIO
 
 def cert_job():
-    objs = Certificate.objects.all().filter(image_created=False)[:2]
-    image_url = "https://robotix.nitrr.ac.in/static/img/cert.jpg"
-    #font_url = "http://127.0.0.1:8000/static/font/Raleway-Regular.ttf"
+    objs = Certificate.objects.all().filter(image_created=False)
+    image_url = "https://robotix.nitrr.ac.in/static/img/certificate/Roboquiz2/pcert.jpeg"
+    req = requests.get("https://robotix.nitrr.ac.in/static/fonts/Satisfy-Regular.ttf?raw=true")
+    idfont = requests.get("https://robotix.nitrr.ac.in/static/fonts/Montserrat-Regular.ttf?raw=true")
+    
+    image_font = ImageFont.truetype(BytesIO(req.content), 130)
+    id_font = ImageFont.truetype(BytesIO(idfont.content), 80)
     response = requests.get(image_url, stream=True)
+
     if response.status_code != requests.codes.ok:
         pass
     else:
@@ -27,10 +33,16 @@ def cert_job():
                 lf.write(block)
             my_img = Image.open(lf)
             d1 = ImageDraw.Draw(my_img)
+
             name = str(obj.name)
-            event_name = str(obj.event.title)
-            d1.text((460, 410), name,  fill="black")
-            d1.text((400, 270), event_name,  fill="black")
+            key = str(obj.url_key)
+            if len(name.split(" ")) == 1:
+                d1.text((2470, 1610), name,font=image_font,  fill="black")
+            else:
+                d1.text((2270, 1610), name,font=image_font,  fill="black")
+
+            d1.text((3530, 3270), key, font=id_font, fill="#000000")
+
             new_img_temp_file = tempfile.NamedTemporaryFile(suffix = '.jpeg')
             my_img.save(new_img_temp_file)
 
@@ -43,10 +55,10 @@ def email_job():
     for obj in objs:
         if(obj.image_created == True):
             if(obj.email_sent == False):
-                html_content='<h3>This is an sample yet <strong>important</strong><img src="https://robotix.nitrr.ac.in{0}" alt="##"> message to all the participants.</h3>'.format(obj.image.url)
+                html_content='<p>It was absolutely wonderful to have you participate in the Roboquiz 2.0. Thankyou for showing us your support and belief.<br />Our journey together has just started and as a first step, here’s wishing you…Congratulations!</p><br /><p>For being spirited and driven. For believing in yourself. For your courage to compete with students and professionals all over India and abroad. For giving it your best shot.<br />There are many opportunities that we will soon be sending your way to take your knowledge quotient a notch higher! </p><br /><p>All you need to do is stay in touch with us at: <br />Instagram: https://www.instagram.com/robotix_nitrr/ <br />Facebook: https://m.facebook.com/nitrrobots16/ <br />Website: http://www.robotix.nitrr.ac.in/ <br />Email: robotixclub@nitrr.ac.in <br />Wishing you the best!</p><br /><br /><strong>ROBOTiX Club</strong><br /><strong>NIT Raipur</strong> <img style="height:400px;width:600px" src="https://robotix.nitrr.ac.in{0}" alt="Your Certificate"> <br/> <h4>To verify this certificate <a href="https://robotix.nitrr.ac.in/certificate/{1}">click here </a> </h4> '.format(obj.image.url,obj.url_key)
                 send_mail(
-                    'Subject here',
-                    'Here is the message.',
+                    'Certificate for {}'.format(obj.event.title),
+                    '',
                     'wandavision5432@gmail.com',
                     ['{}'.format(obj.email)],
                     fail_silently=False,

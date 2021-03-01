@@ -186,6 +186,7 @@ if DEBUG:
     EMAIL_HOST_USER = 'wandavision5432@gmail.com'
 else :
     EMAIL_HOST_USER = 'robotixclub@nitrr.ac.in'
+    #EMAIL_HOST_USER = 'wandavision5432@gmail.com'
 
 EMAIL_HOST_PASSWORD = 'Nitrrobots16'
 

@@ -26,7 +26,6 @@ You should see the name of your virtual environment in brackets on your terminal
 Any python commands you use will now work with your virtual environment
 
 ### Deactivate the virtual environment
-To decativate the virtual environment and use your original Python environment, simply type ‘deactivate’.
 ```
 deactivate
 ```
